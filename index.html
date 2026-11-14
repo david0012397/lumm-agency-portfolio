@@ -1850,6 +1850,12 @@
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 1024px) {
+      .live-sites-grid {
+        grid-template-columns: 1fr;
+      }
+      .live-site-actions {
+        flex-direction: column;
+      }
       .hero-metrics {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -1917,6 +1923,290 @@
         padding: 28px 20px;
       }
     }
+  
+    /* ==========================================================================
+       WEBSITES CREATED & LIVE DEMOS
+       ========================================================================== */
+    section.websites-created {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .live-sites-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      margin-top: 40px;
+    }
+
+    .live-site-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+    .live-site-card:hover {
+      border-color: rgba(212, 255, 63, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(212, 255, 63, 0.12);
+    }
+
+    /* Browser Mockup Window Header */
+    .browser-frame-header {
+      background: #141724;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .browser-traffic-lights {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .traffic-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .traffic-dot.red { background: #ff5f56; }
+    .traffic-dot.yellow { background: #ffbd2e; }
+    .traffic-dot.green { background: #27c93f; }
+
+    .browser-url-pill {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-pill);
+      padding: 4px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-grow: 1;
+      max-width: 320px;
+      margin: 0 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .browser-url-pill span.lock-icon {
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    .browser-status-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Live Preview Screen Area */
+    .live-site-preview-screen {
+      height: 250px;
+      background: #090a10;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .preview-canvas-card {
+      width: 92%;
+      height: 88%;
+      border-radius: var(--radius-sm);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      transition: transform 0.4s ease;
+    }
+    .live-site-card:hover .preview-canvas-card {
+      transform: scale(1.02);
+    }
+
+    /* Card Details Body */
+    .live-site-body {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background: linear-gradient(180deg, rgba(14, 16, 23, 0.8) 0%, rgba(9, 10, 15, 0.95) 100%);
+    }
+
+    .live-site-category {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .live-site-title {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .live-site-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .live-feature-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .feature-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      font-family: var(--font-mono);
+    }
+
+    .live-site-deliverables {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 28px;
+    }
+    .live-site-deliverables-title {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .live-site-deliverables-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.84rem;
+      color: #cbd5e1;
+    }
+    .live-site-deliverables-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 800;
+      margin-right: 8px;
+    }
+
+    .live-site-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .live-site-actions .btn {
+      flex: 1;
+    }
+
+    /* Iframe Live Preview Modal */
+    .iframe-modal-dialog {
+      background: #0d0f17;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 95vw;
+      max-width: 1240px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+      padding: 0 !important;
+    }
+    .iframe-modal-bar {
+      background: #151825;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .iframe-modal-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .iframe-modal-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .device-toggle-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-mono);
+    }
+    .device-toggle-btn.active, .device-toggle-btn:hover {
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+    }
+    .iframe-container-viewport {
+      flex: 1;
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .iframe-container-viewport iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transition: width 0.3s ease;
+      background: #fff;
+    }
+
   </style>
 </head>
 <body>
@@ -1944,6 +2234,7 @@
 
       <nav class="desktop-nav">
         <a href="#services">Services</a>
+        <a href="#websites-created" style="color: var(--accent); font-weight: 700;">✦ Websites Created</a>
         <a href="#simulator">Reel Lab</a>
         <a href="#calculator">ROI Calc</a>
         <a href="#work">Case Studies</a>
@@ -1963,6 +2254,7 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobile-drawer">
+      <a href="#websites-created" class="mobile-link" style="color: var(--accent); font-weight: 700;">✦ Websites Created (Live Demos)</a>
       <a href="#services" class="mobile-link">Services (10)</a>
       <a href="#simulator" class="mobile-link">Reel Simulator</a>
       <a href="#calculator" class="mobile-link">ROI Calculator</a>
@@ -2467,6 +2759,169 @@
         <p class="services-disclaimer">
           Every service can be quoted separately or bundled into a custom monthly retainer. Ad spend, filming equipment, and specialized third-party software are not included unless agreed in a custom quote. Results depend on your product and offer — we focus on engineering the highest craft standards.
         </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WEBSITES CREATED & LIVE DEMOS
+         ========================================================================== -->
+    <section class="websites-created" id="websites-created">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Live Client Builds</span>
+          <h2 class="section-title">Websites Created &amp; Engineered</h2>
+          <p class="section-sub">
+            Real, fully interactive client websites engineered with obsessive craft. Click <strong>"Open Live Website"</strong> to launch the production-ready website directly in a new tab, or preview it right inside this page.
+          </p>
+        </div>
+
+        <div class="live-sites-grid">
+
+          <!-- Site 1: VELOURA Dental & Aesthetic Atelier -->
+          <div class="live-site-card">
+            <div class="browser-frame-header">
+              <div class="browser-traffic-lights">
+                <span class="traffic-dot red"></span>
+                <span class="traffic-dot yellow"></span>
+                <span class="traffic-dot green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <span class="lock-icon">🔒</span> https://veloura.dental/operatory-portfolio
+              </div>
+              <div class="browser-status-tag">
+                <span class="badge-dot"></span> LIVE DEMO
+              </div>
+            </div>
+
+            <!-- Preview Screen Graphic -->
+            <div class="live-site-preview-screen">
+              <div class="preview-canvas-card" style="background: radial-gradient(circle at 50% 30%, #1f1b29 0%, #0d0c14 100%);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.15em; color: #f5eedc;">VELOURA</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #d4af37; border: 1px solid rgba(212,175,55,0.3); padding: 2px 8px; border-radius: 20px;">2700K COVE SIM</span>
+                </div>
+                <div>
+                  <div style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px;">
+                    Where Clinical Precision Meets Sanctuary.
+                  </div>
+                  <div style="display: flex; gap: 6px;">
+                    <span style="height: 4px; width: 30px; background: #d4af37; border-radius: 2px;"></span>
+                    <span style="height: 4px; width: 14px; background: rgba(255,255,255,0.2); border-radius: 2px;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="live-site-body">
+              <span class="live-site-category">Luxury Medical &amp; Aesthetic Surgery</span>
+              <h3 class="live-site-title">VELOURA | Private Dental &amp; Aesthetic Atelier</h3>
+              <p class="live-site-description">
+                A luxury operatory portfolio crafted for an elite surgical dental atelier specializing in 3D computer-guided implants and porcelain aesthetics. Features real-time interactive operatory lighting controls (2700K warm sanctuary, shadowless precision, shade studio) and high-ticket patient consultation booking.
+              </p>
+
+              <div class="live-feature-chips">
+                <span class="feature-chip">✦ Interactive Lighting Engine</span>
+                <span class="feature-chip">✦ 3D Guided Implants</span>
+                <span class="feature-chip">✦ Luxury Editorial Dark Theme</span>
+                <span class="feature-chip">✦ High-Ticket Consultation Flow</span>
+              </div>
+
+              <div class="live-site-deliverables">
+                <div class="live-site-deliverables-title">Engineering &amp; Design Stack</div>
+                <ul class="live-site-deliverables-list">
+                  <li>Dynamic lighting shader simulation (2700K Warm, Shadowless, Shade Studio)</li>
+                  <li>Luxury typography hierarchy &amp; smooth micro-interactions</li>
+                  <li>Private surgical operatory walkthrough &amp; discipline showcases</li>
+                  <li>Fully responsive across mobile, tablet, and ultra-wide screens</li>
+                </ul>
+              </div>
+
+              <div class="live-site-actions">
+                <a href="./websites/dental-atelier/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>🚀 Open Live Website</span>
+                  <span style="font-family: var(--font-mono);">↗</span>
+                </a>
+                <button class="btn btn-secondary btn-sm" onclick="openIframePreview('./websites/dental-atelier/index.html', 'VELOURA | Luxury Dental Atelier')">
+                  <span>👁️ Quick In-Page Preview</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Site 2: Home Services Portfolio -->
+          <div class="live-site-card">
+            <div class="browser-frame-header">
+              <div class="browser-traffic-lights">
+                <span class="traffic-dot red"></span>
+                <span class="traffic-dot yellow"></span>
+                <span class="traffic-dot green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <span class="lock-icon">🔒</span> https://comfortfirst.homeservices/dispatch
+              </div>
+              <div class="browser-status-tag">
+                <span class="badge-dot"></span> LIVE DEMO
+              </div>
+            </div>
+
+            <!-- Preview Screen Graphic -->
+            <div class="live-site-preview-screen">
+              <div class="preview-canvas-card" style="background: radial-gradient(circle at 50% 30%, #1e293b 0%, #0f172a 100%);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: #38bdf8;">COMFORT FIRST</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #22c55e; border: 1px solid rgba(34,197,94,0.3); padding: 2px 8px; border-radius: 20px;">24/7 DISPATCH</span>
+                </div>
+                <div>
+                  <div style="font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px;">
+                    Comfort You Can Count On. Built to Last.
+                  </div>
+                  <div style="display: flex; gap: 6px;">
+                    <span style="height: 4px; width: 30px; background: #38bdf8; border-radius: 2px;"></span>
+                    <span style="height: 4px; width: 14px; background: rgba(255,255,255,0.2); border-radius: 2px;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="live-site-body">
+              <span class="live-site-category">Residential Contracting &amp; Multi-Trade</span>
+              <h3 class="live-site-title">Comfort First | Residential Home Services</h3>
+              <p class="live-site-description">
+                A conversion-focused home services platform for premium residential trades: HVAC, heat pumps, architectural roofing &amp; gutters, electrical panels, and air filtration. Engineered with instant quote estimators, emergency dispatch triggers, and local search trust badges.
+              </p>
+
+              <div class="live-feature-chips">
+                <span class="feature-chip">✦ Emergency Dispatch Engine</span>
+                <span class="feature-chip">✦ Multi-Trade Service Filtering</span>
+                <span class="feature-chip">✦ Instant Quote Estimate Flow</span>
+                <span class="feature-chip">✦ Credibility &amp; Warranty Badges</span>
+              </div>
+
+              <div class="live-site-deliverables">
+                <div class="live-site-deliverables-title">Engineering &amp; Design Stack</div>
+                <ul class="live-site-deliverables-list">
+                  <li>Rapid lead capture appointment booking &amp; emergency phone dispatch</li>
+                  <li>Multi-trade showcase (HVAC, Roofing, Electrical, Cladding, Air Quality)</li>
+                  <li>Interactive service fee calculators &amp; financing breakdown cards</li>
+                  <li>Built for lightning-fast 0.6s mobile load times and local SEO</li>
+                </ul>
+              </div>
+
+              <div class="live-site-actions">
+                <a href="./websites/home-services/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>🚀 Open Live Website</span>
+                  <span style="font-family: var(--font-mono);">↗</span>
+                </a>
+                <button class="btn btn-secondary btn-sm" onclick="openIframePreview('./websites/home-services/index.html', 'Comfort First | Home Services')">
+                  <span>👁️ Quick In-Page Preview</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -3538,6 +3993,67 @@
     document.getElementById('confirm-modal').addEventListener('click', (e) => {
       if (e.target === document.getElementById('confirm-modal')) closeConfirmModal();
     });
+
+    // 12. Live Website Iframe Preview Logic
+    const iframeModal = document.getElementById('iframe-modal');
+    const livePreviewIframe = document.getElementById('live-preview-iframe');
+    const previewModalName = document.getElementById('preview-modal-name');
+    const previewExternalLink = document.getElementById('preview-external-link');
+
+    function openIframePreview(url, siteName) {
+      livePreviewIframe.src = url;
+      previewModalName.textContent = siteName;
+      previewExternalLink.href = url;
+      setIframeDevice('100%', document.getElementById('btn-desktop'));
+      iframeModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeIframeModal() {
+      iframeModal.classList.remove('open');
+      livePreviewIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    iframeModal.addEventListener('click', (e) => {
+      if (e.target === iframeModal) closeIframeModal();
+    });
+
+    function setIframeDevice(width, btn) {
+      document.querySelectorAll('.device-toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      livePreviewIframe.style.width = width;
+      if (width !== '100%') {
+        livePreviewIframe.style.border = '2px solid rgba(255,255,255,0.2)';
+        livePreviewIframe.style.borderRadius = '14px';
+      } else {
+        livePreviewIframe.style.border = 'none';
+        livePreviewIframe.style.borderRadius = '0';
+      }
+    }
+
   </script>
 </body>
+  <!-- Live Website Iframe Preview Modal -->
+  <div class="modal-backdrop" id="iframe-modal">
+    <div class="iframe-modal-dialog">
+      <div class="iframe-modal-bar">
+        <div class="iframe-modal-title">
+          <span style="color: var(--accent);">🌐</span>
+          <span id="preview-modal-name">Live Website Preview</span>
+        </div>
+        <div class="iframe-modal-controls">
+          <button class="device-toggle-btn active" id="btn-desktop" onclick="setIframeDevice('100%', this)">🖥️ Desktop</button>
+          <button class="device-toggle-btn" id="btn-tablet" onclick="setIframeDevice('768px', this)">📱 Tablet</button>
+          <button class="device-toggle-btn" id="btn-mobile" onclick="setIframeDevice('375px', this)">📱 Mobile</button>
+          <a href="#" target="_blank" id="preview-external-link" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.78rem;">Open Fullscreen ↗</a>
+          <button class="modal-close-btn" onclick="closeIframeModal()" style="position: static; font-size: 1.3rem; margin-left: 8px;">✕</button>
+        </div>
+      </div>
+      <div class="iframe-container-viewport">
+        <iframe id="live-preview-iframe" src="" title="Live Website Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
 </html>

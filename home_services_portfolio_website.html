@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Services | Comfort You Can Count On</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Barlow Condensed for exact Hero Headline match & Inter for clean UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#112239',
+                            900: '#0b192c',
+                            950: '#07111e'
+                        },
+                        brand: {
+                            orange: '#e87511',
+                            orangeLight: '#ff8a24',
+                            amber: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        condensed: ['"Barlow Condensed"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'orange-glow': '0 10px 30px -5px rgba(232, 117, 17, 0.5)',
+                        'card-hover': '0 20px 40px -15px rgba(11, 25, 44, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities & Portfolio Polish */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        .hero-headline {
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.01em;
+            line-height: 0.94;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-eyebrow {
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.06em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Sunburst & Warm Sunset Overlay matching reference image */
+        .sunset-glow {
+            background: radial-gradient(circle at 88% 22%, rgba(255, 185, 50, 0.42) 0%, rgba(232, 117, 17, 0.18) 28%, rgba(11, 25, 44, 0.55) 75%, rgba(7, 17, 30, 0.82) 100%);
+        }
+
+        .hero-left-vignette {
+            background: linear-gradient(90deg, rgba(11, 25, 44, 0.78) 0%, rgba(11, 25, 44, 0.45) 48%, rgba(11, 25, 44, 0.05) 100%);
+        }
+
+        /* Interactive Before/After Slider Styles */
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .comparison-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        /* Subtle Float Animation for Hero Badges */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(232, 117, 17, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(232, 117, 17, 0); }
+        }
+        .badge-ring {
+            animation: pulseGlow 3s infinite;
+        }
+
+        /* Custom Range Slider */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #e87511;
+            cursor: pointer;
+            border: 3px solid #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- ==========================================
+         TOP NAVIGATION BAR (Exact Reference Match)
+         ========================================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo (Custom SVG matching "Home Services" roof & chimney outline) -->
+            <a href="#" class="flex items-center group focus:outline-none">
+                <div class="relative flex flex-col">
+                    <!-- Roofline SVG above "Home" -->
+                    <svg class="w-24 h-7 -mb-2 ml-0.5 text-white transition-transform duration-300 group-hover:-translate-y-0.5" viewBox="0 0 110 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Chimney -->
+                        <path d="M22 16V7H29V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Roof Peak -->
+                        <path d="M6 27L46 5L86 27" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="flex items-baseline tracking-tight text-2xl sm:text-[28px] leading-none">
+                        <span class="font-bold text-white">Home</span>
+                        <span class="font-light text-gray-200 ml-1.5">Services</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-7 xl:space-x-9 text-[13px] font-semibold tracking-wider text-gray-100">
+                <!-- Services Dropdown -->
+                <div class="relative group py-6">
+                    <button class="flex items-center space-x-1.5 hover:text-brand-orange transition-colors uppercase">
+                        <span>SERVICES</span>
+                        <svg class="w-3.5 h-3.5 text-gray-300 group-hover:text-brand-orange group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 top-full w-64 bg-navy-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200">
+                        <a href="#services" onclick="filterServices('hvac')" class="flex items-center px-4 py-2.5 hover:bg-white/5 text-white hover:text-brand-orange transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange mr-3"></span>
+                            HVAC & Climate Control
+                        </a>
+                        <a href="#services" onclick="filterServices('roofing')" class="flex items-center px-4 py-2.5 hover:bg-white/5 text-white hover:text-brand-orange transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange mr-3"></span>
+                            Roofing & Seamless Gutters
+                        </a>
+                        <a href="#services" onclick="filterServices('electrical')" class="flex items-center px-4 py-2.5 hover:bg-white/5 text-white hover:text-brand-orange transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange mr-3"></span>
+                            Electrical & Exterior Lighting
+                        </a>
+                        <a href="#services" onclick="filterServices('exterior')" class="flex items-center px-4 py-2.5 hover:bg-white/5 text-white hover:text-brand-orange transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange mr-3"></span>
+                            Siding & Garage Doors
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#about" class="hover:text-brand-orange transition-colors uppercase">ABOUT US</a>
+                <a href="#reviews" class="hover:text-brand-orange transition-colors uppercase">REVIEWS</a>
+                <a href="#gallery" class="hover:text-brand-orange transition-colors uppercase">GALLERY</a>
+                <a href="#offers" class="hover:text-brand-orange transition-colors uppercase">SPECIAL OFFERS</a>
+                <a href="#contact" class="hover:text-brand-orange transition-colors uppercase">CONTACT</a>
+            </nav>
+
+            <!-- Right Action: BOOK NOW Outlined Button + Reference Mode Toggle -->
+            <div class="hidden lg:flex items-center space-x-3">
+                <button onclick="openBookingModal('General Service Consultation')" class="px-6 py-2.5 rounded-md border-[1.5px] border-brand-orange text-white font-semibold text-[13px] tracking-wider uppercase hover:bg-brand-orange hover:shadow-orange-glow transition-all duration-200 active:scale-95">
+                    BOOK NOW
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-lg text-gray-200 hover:text-white hover:bg-white/10 focus:outline-none" aria-label="Toggle Menu">
+                <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950/98 border-b border-white/10 px-6 pt-4 pb-6 space-y-3">
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">SERVICES</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">ABOUT US</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">REVIEWS</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">GALLERY</a>
+            <a href="#offers" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">SPECIAL OFFERS</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold tracking-wider text-gray-200 hover:text-brand-orange uppercase">CONTACT</a>
+            <div class="pt-3">
+                <button onclick="toggleMobileMenu(); openBookingModal('Priority Home Service');" class="w-full py-3 rounded-md border-[1.5px] border-brand-orange text-white font-semibold text-sm tracking-wider uppercase hover:bg-brand-orange transition-all">
+                    BOOK NOW
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION (Reconstructed from Reference Image)
+         ========================================== -->
+    <section class="relative min-h-[92vh] lg:min-h-screen pt-20 flex items-center overflow-hidden bg-navy-950">
+        
+        <!-- Background Image Layer: Uses uploaded 'Comfort You Can Count On.png' with automatic fallback + slide switcher -->
+        <div class="absolute inset-0 z-0">
+            <!-- Primary Image: Attempts to load the local 'Comfort You Can Count On.png' first, or falls back to high-res architectural home sunset photo -->
+            <img id="hero-bg-img" 
+                 src="Comfort You Can Count On.png" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=2000&q=85'; document.getElementById('local-img-status').classList.remove('hidden');"
+                 alt="Modern Home Exterior with HVAC, New Roof, and Warm Sunset Lighting" 
+                 class="w-full h-full object-cover object-center scale-[1.01] transition-all duration-700" />
+            
+            <!-- Warm Golden Hour Sunburst & Readability Overlays -->
+            <div id="hero-overlay-1" class="absolute inset-0 sunset-glow transition-opacity duration-500"></div>
+            <div id="hero-overlay-2" class="absolute inset-0 hero-left-vignette transition-opacity duration-500"></div>
+        </div>
+
+        <!-- Floating Portfolio Control Pill (Top-Right inside Hero): Lets user inspect original reference vs live interactive overlay or load custom image -->
+        <div class="absolute top-24 right-4 sm:right-8 z-30 flex flex-wrap items-center gap-2 bg-navy-900/85 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-full text-xs text-gray-200 shadow-xl">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+            </span>
+            <span class="font-medium hidden sm:inline">Hero View:</span>
+            <button onclick="setHeroMode('interactive')" id="mode-interactive-btn" class="px-2.5 py-1 rounded-full bg-brand-orange text-white font-semibold transition-all">
+                Live Interactive
+            </button>
+            <button onclick="setHeroMode('clean')" id="mode-clean-btn" class="px-2.5 py-1 rounded-full hover:bg-white/10 text-gray-300 transition-all" title="Hides HTML text overlay if you are viewing the raw Comfort You Can Count On.png with baked-in text">
+                Full Image Only
+            </button>
+            <label class="cursor-pointer px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-amber-300 font-medium transition-all flex items-center gap-1" title="Select Comfort You Can Count On.png from your device to preview locally">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                <span>Load Image</span>
+                <input type="file" accept="image/*" class="hidden" onchange="loadCustomHeroImage(event)">
+            </label>
+        </div>
+
+        <!-- Main Hero Content Container (Matches Left Alignment & Proportions of Reference Image) -->
+        <div id="hero-content-wrapper" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full py-16 lg:py-24 transition-all duration-500">
+            <div class="max-w-2xl">
+                
+                <!-- Eyebrow Text -->
+                <p id="hero-eyebrow" class="hero-eyebrow text-brand-orange font-bold text-lg sm:text-xl md:text-[22px] uppercase tracking-wider mb-2">
+                    RELIABLE. PROFESSIONAL. LOCAL.
+                </p>
+
+                <!-- Main Condensed Headline -->
+                <h1 id="hero-title" class="hero-headline text-white font-bold text-6xl sm:text-7xl md:text-[86px] uppercase mb-5">
+                    COMFORT YOU<br />CAN COUNT ON
+                </h1>
+
+                <!-- Subheadline -->
+                <p id="hero-subtitle" class="text-white/95 text-base sm:text-lg md:text-[19px] font-normal leading-relaxed max-w-md mb-9 drop-shadow">
+                    Expert home services for a more comfortable, efficient, and beautiful home.
+                </p>
+
+                <!-- 3 Feature Badges with Circular Orange-Outlined Icons -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-xl mb-10">
+                    
+                    <!-- Badge 1: Trusted Professionals -->
+                    <div class="flex items-center space-x-3.5 group cursor-pointer" onclick="scrollToSection('about')">
+                        <div class="w-12 h-12 rounded-full border-[1.8px] border-brand-orange bg-navy-950/60 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange/20 group-hover:scale-105 transition-all badge-ring">
+                            <!-- Shield Check SVG -->
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div class="text-white text-sm font-medium leading-snug drop-shadow">
+                            Trusted<br />Professionals
+                        </div>
+                    </div>
+
+                    <!-- Badge 2: Quality Workmanship -->
+                    <div class="flex items-center space-x-3.5 group cursor-pointer" onclick="scrollToSection('gallery')">
+                        <div class="w-12 h-12 rounded-full border-[1.8px] border-brand-orange bg-navy-950/60 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange/20 group-hover:scale-105 transition-all">
+                            <!-- Gear Check SVG -->
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="text-white text-sm font-medium leading-snug drop-shadow">
+                            Quality<br />Workmanship
+                        </div>
+                    </div>
+
+                    <!-- Badge 3: On-Time Service -->
+                    <div class="flex items-center space-x-3.5 group cursor-pointer" onclick="openBookingModal('On-Time Guaranteed Service')">
+                        <div class="w-12 h-12 rounded-full border-[1.8px] border-brand-orange bg-navy-950/60 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange/20 group-hover:scale-105 transition-all">
+                            <!-- Clock SVG -->
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="text-white text-sm font-medium leading-snug drop-shadow">
+                            On-Time<br />Service
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary CTA Button: SCHEDULE SERVICE -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="openBookingModal('Scheduled Home Service')" class="group relative inline-flex items-center justify-center px-9 py-4 bg-brand-orange hover:bg-brand-orangeLight text-white font-bold text-sm sm:text-[15px] tracking-wider uppercase rounded-lg shadow-orange-glow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+                        <span>SCHEDULE SERVICE</span>
+                        <svg class="w-5 h-5 ml-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+
+                    <a href="#estimator" class="inline-flex items-center px-6 py-4 rounded-lg bg-navy-900/75 hover:bg-navy-900 text-white border border-white/20 text-sm font-semibold tracking-wide backdrop-blur-md transition-all">
+                        <span>Project Scope Estimator</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Hotspot Pins on the House Exterior (Visible on Desktop for Portfolio Interactivity) -->
+            <div class="hidden xl:block">
+                <!-- Hotspot 1: Architectural Shingle Roof -->
+                <div class="absolute top-[28%] right-[32%] group">
+                    <button onclick="openHotspotDetail('roof')" class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                        <span class="relative font-bold text-xs">+</span>
+                    </button>
+                    <div class="opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 absolute bottom-full mb-2 -left-24 w-60 bg-navy-900/95 text-white p-3.5 rounded-xl border border-brand-orange/40 shadow-xl text-xs">
+                        <p class="font-bold text-brand-orange uppercase">Architectural Roofing</p>
+                        <p class="text-gray-300 mt-0.5">WeatherGuard Shingles & Seamless Gutter Protection.</p>
+                        <p class="text-amber-300 font-semibold mt-1">Contact for Details & Custom INR Quote</p>
+                    </div>
+                </div>
+
+                <!-- Hotspot 2: High-Efficiency HVAC Unit -->
+                <div class="absolute bottom-[22%] left-[25%] group">
+                    <button onclick="openHotspotDetail('hvac')" class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                        <span class="relative font-bold text-xs">+</span>
+                    </button>
+                    <div class="opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 absolute bottom-full mb-2 -left-20 w-60 bg-navy-900/95 text-white p-3.5 rounded-xl border border-brand-orange/40 shadow-xl text-xs">
+                        <p class="font-bold text-brand-orange uppercase">BEE 5-Star Inverter HVAC</p>
+                        <p class="text-gray-300 mt-0.5">Whisper-quiet variable speed condenser unit.</p>
+                        <p class="text-amber-300 font-semibold mt-1">Contact for Details & Custom INR Quote</p>
+                    </div>
+                </div>
+
+                <!-- Hotspot 3: Exterior Coach Lighting & Garage -->
+                <div class="absolute bottom-[32%] right-[38%] group">
+                    <button onclick="openHotspotDetail('lighting')" class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                        <span class="relative font-bold text-xs">+</span>
+                    </button>
+                    <div class="opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 absolute bottom-full mb-2 -left-24 w-60 bg-navy-900/95 text-white p-3.5 rounded-xl border border-brand-orange/40 shadow-xl text-xs">
+                        <p class="font-bold text-brand-orange uppercase">Smart Exterior Electrical</p>
+                        <p class="text-gray-300 mt-0.5">Warm dusk-to-dawn lantern lighting & insulated garage doors.</p>
+                        <p class="text-amber-300 font-semibold mt-1">Contact for Details & Custom INR Quote</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Center Pagination Dots (Exact Reference Match: 8 Dots with 1st White & 4th Orange) -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3.5 bg-navy-950/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+            <button onclick="switchHeroSlide(0)" class="hero-dot w-3 h-3 rounded-full bg-white transition-all scale-110" aria-label="Slide 1 - Reference Hero"></button>
+            <button onclick="switchHeroSlide(1)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 2 - HVAC Precision"></button>
+            <button onclick="switchHeroSlide(2)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 3 - Roofing Excellence"></button>
+            <button onclick="switchHeroSlide(3)" class="hero-dot w-3 h-3 rounded-full bg-brand-orange transition-all scale-110" aria-label="Slide 4 - Golden Hour Comfort"></button>
+            <button onclick="switchHeroSlide(4)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 5 - Smart Electrical"></button>
+            <button onclick="switchHeroSlide(5)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 6 - Siding & Gutters"></button>
+            <button onclick="switchHeroSlide(6)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 7 - Emergency Response"></button>
+            <button onclick="switchHeroSlide(7)" class="hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all" aria-label="Slide 8 - Seasonal Offers"></button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PORTFOLIO SHOWCASE BAR: FRONT-PAGE REFERENCE IMAGE CARD
+         ========================================== -->
+    <section class="relative z-30 -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="bg-navy-900 text-white rounded-2xl shadow-2xl border border-white/10 p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Left Stats & Trust Metrics -->
+            <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-6 border-b lg:border-b-0 lg:border-r border-white/10 pb-6 lg:pb-0 lg:pr-6">
+                <div>
+                    <div class="text-3xl sm:text-4xl font-condensed font-bold text-brand-orange">24/7</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1 font-medium">Emergency Dispatch</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-condensed font-bold text-white">15,400+</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1 font-medium">Local Homes Served</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-condensed font-bold text-brand-orange">4.9 ★</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1 font-medium">Verified Google Rating</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-condensed font-bold text-white">100%</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1 font-medium">Workmanship Guarantee</div>
+                </div>
+            </div>
+
+            <!-- Right Reference Image Preview & Lightbox Trigger -->
+            <div class="lg:col-span-4 flex items-center justify-between gap-4">
+                <div class="flex items-center space-x-3.5">
+                    <div class="relative w-20 h-14 rounded-lg overflow-hidden border-2 border-brand-orange flex-shrink-0 group cursor-pointer" onclick="openReferenceLightbox()">
+                        <img id="thumb-ref-img" src="Comfort You Can Count On.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=600&q=80';" alt="Comfort You Can Count On Reference" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-orange block">Featured Design</span>
+                        <h3 class="text-sm font-semibold text-white">Original Hero Concept</h3>
+                        <button onclick="openReferenceLightbox()" class="text-xs text-gray-300 hover:text-brand-orange underline mt-0.5">Inspect Full Image &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         OUR CORE SERVICES SECTION (Filterable & Interactive)
+         ========================================== -->
+    <section id="services" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">COMPREHENSIVE HOME CARE</span>
+                <h2 class="font-condensed font-bold text-4xl sm:text-5xl text-navy-900 uppercase mt-1">
+                    EXPERT SERVICES BUILT TO LAST
+                </h2>
+            </div>
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                <button onclick="filterServices('all')" data-filter="all" class="service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-navy-900 text-white transition-all">
+                    All Services
+                </button>
+                <button onclick="filterServices('hvac')" data-filter="hvac" class="service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gray-200/80 text-navy-900 hover:bg-brand-orange hover:text-white transition-all">
+                    HVAC & Cooling
+                </button>
+                <button onclick="filterServices('roofing')" data-filter="roofing" class="service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gray-200/80 text-navy-900 hover:bg-brand-orange hover:text-white transition-all">
+                    Roofing & Gutters
+                </button>
+                <button onclick="filterServices('electrical')" data-filter="electrical" class="service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gray-200/80 text-navy-900 hover:bg-brand-orange hover:text-white transition-all">
+                    Electrical
+                </button>
+                <button onclick="filterServices('exterior')" data-filter="exterior" class="service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gray-200/80 text-navy-900 hover:bg-brand-orange hover:text-white transition-all">
+                    Siding & Exterior
+                </button>
+            </div>
+        </div>
+
+        <!-- Services Cards Grid -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Service Card 1: High-Efficiency HVAC -->
+            <div data-category="hvac" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80" alt="HVAC Installation and Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Climate Control
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Heating, Cooling & Heat Pumps
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Whisper-quiet variable-speed AC condensers, smart zoning thermostats, and seasonal tune-ups that slash monthly power consumption by up to 35%.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Same-Day AC & Heat Pump Service</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>BEE 5-Star High-Efficiency Installations</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Comprehensive Parts & Labor Warranty</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Heating, Cooling & Heat Pumps — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 2: Architectural Roofing -->
+            <div data-category="roofing" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=80" alt="Architectural Shingle Roof Replacement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Roofing & Gutters
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Architectural Roofing & Gutters
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Class-4 impact-resistant dimensional shingles, ridge-vent attic cooling, and heavy-gauge seamless K-style aluminum rainwater gutters.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>All-Weather Monsoon & Wind Protection</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Drone Thermal Leak Inspections</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Seamless Downspouts & Leaf Guards</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Architectural Roofing & Gutters — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 3: Smart Electrical & Exterior Lighting -->
+            <div data-category="electrical" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=80" alt="Exterior Lighting and Smart Home Electrical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Licensed Electrical
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Electrical Panels & Warm Lighting
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Three-phase distribution upgrades, whole-home surge protection, EV fast chargers, and warm architectural coach lighting for curb appeal.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Architectural Entry & Soffit Lighting</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Inverter & Standby Generator Integration</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Government-Licensed Master Electricians</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Electrical Panels & Lighting — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 4: Siding, Trim & Garage Doors -->
+            <div data-category="exterior" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Siding and Insulated Garage Doors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Exterior Remodeling
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Fiber Cement Cladding & Garage Doors
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Transform your home's thermal envelope with weatherproof lap siding, custom craftsman entry doors, and quiet belt-drive automated garage doors.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Weather-Resistant Exterior Cladding</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Insulated Steel Automated Garage Doors</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Rot-Free Fascia & Soffit Trim</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Siding & Garage Door Upgrade — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 5: Indoor Air Quality & Ductwork -->
+            <div data-category="hvac" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80" alt="Whole Home Air Purification" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Healthy Air
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Air Purification & Duct Sealing
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Eliminate 99.9% of PM2.5 pollutants, airborne allergens, and humidity imbalances with medical-grade HEPA filtration and pressurized duct sealing.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>PM2.5 & UV-C Germicidal Purifiers</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Whole-Home Dehumidification Systems</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Airflow Balancing for Every Room</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Air Purification & Duct Sealing — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 6: Attic Insulation & Energy Audits -->
+            <div data-category="roofing" class="service-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col group">
+                <div class="relative h-56 overflow-hidden bg-navy-900">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Home Energy Efficiency and Attic Insulation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute top-4 left-4 bg-navy-900/90 backdrop-blur-md text-brand-orange text-xs font-bold uppercase px-3 py-1.5 rounded-md border border-brand-orange/30">
+                        Energy Efficiency
+                    </div>
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-condensed font-bold text-2xl text-navy-900 uppercase group-hover:text-brand-orange transition-colors">
+                            Thermal Insulation & Solar Venting
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2.5">
+                            Keep peak summer heat out of your living space and protect your roof deck with high-density thermal insulation and solar attic fans.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-xs text-gray-700 font-medium">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>BEE Energy Efficiency Compliant</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Radiant Heat Barrier Roof Deck Shield</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange mr-2"></span>Thermal Imaging Report Included</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-gray-500">Pricing: <strong class="text-navy-900">Contact for Details</strong></span>
+                        <button onclick="openBookingModal('Thermal Insulation & Energy Audit — Custom INR Quote')" class="text-brand-orange hover:text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center group/btn">
+                            <span>Get Custom Quote</span>
+                            <svg class="w-4 h-4 ml-1.5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         INTERACTIVE PROJECT SCOPE & EFFICIENCY ESTIMATOR (NO FIXED PRICES - INR CONTEXT)
+         ========================================== -->
+    <section id="estimator" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Decorative Ambient Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-orange/15 blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Controls -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">TAILORED TECHNICAL PLANNING</span>
+                        <h2 class="font-condensed font-bold text-4xl sm:text-5xl uppercase mt-1">
+                            INSTANT PROJECT SCOPE & EFFICIENCY PLANNER
+                        </h2>
+                        <p class="text-gray-300 text-sm sm:text-base mt-3 max-w-xl">
+                            Configure your home specifications below to calculate recommended system capacity, projected power bill reduction, installation timeline, and request a custom INR (₹) quotation.
+                        </p>
+                    </div>
+
+                    <!-- Step 1: Select Service -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-3">1. Select Service Category</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <button type="button" onclick="updateEstimatorService('hvac', this)" class="est-service-btn p-3.5 rounded-xl border-2 border-brand-orange bg-brand-orange/15 text-left transition-all">
+                                <div class="font-bold text-sm text-white">HVAC System</div>
+                                <div class="text-[11px] text-gray-300 mt-0.5">AC / Heat Pump</div>
+                            </button>
+                            <button type="button" onclick="updateEstimatorService('roof', this)" class="est-service-btn p-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-left transition-all">
+                                <div class="font-bold text-sm text-white">New Roof</div>
+                                <div class="text-[11px] text-gray-300 mt-0.5">Shingles & Gutters</div>
+                            </button>
+                            <button type="button" onclick="updateEstimatorService('electrical', this)" class="est-service-btn p-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-left transition-all">
+                                <div class="font-bold text-sm text-white">Electrical</div>
+                                <div class="text-[11px] text-gray-300 mt-0.5">Panel & Lighting</div>
+                            </button>
+                            <button type="button" onclick="updateEstimatorService('exterior', this)" class="est-service-btn p-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-left transition-all">
+                                <div class="font-bold text-sm text-white">Exterior</div>
+                                <div class="text-[11px] text-gray-300 mt-0.5">Siding & Garage</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Home Square Footage Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="sqft-slider" class="text-xs font-bold uppercase tracking-wider text-gray-300">2. Approximate Home Area</label>
+                            <span id="sqft-display" class="text-lg font-condensed font-bold text-brand-orange">2,400 sq. ft.</span>
+                        </div>
+                        <input id="sqft-slider" type="range" min="1000" max="5000" step="200" value="2400" oninput="recalculateEstimate()" class="w-full h-2 bg-white/15 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-gray-400 mt-1.5">
+                            <span>1,000 sq. ft.</span>
+                            <span>3,000 sq. ft.</span>
+                            <span>5,000+ sq. ft.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Efficiency Tier -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-3">3. Performance & Warranty Tier</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="updateEstimatorTier(1, this)" class="est-tier-btn p-3.5 rounded-xl border border-white/15 bg-white/5 text-left transition-all">
+                                <div class="font-bold text-sm">Essential Standard</div>
+                                <div class="text-xs text-gray-400 mt-0.5">5-Yr Comprehensive Warranty</div>
+                            </button>
+                            <button type="button" onclick="updateEstimatorTier(1.25, this)" class="est-tier-btn p-3.5 rounded-xl border-2 border-brand-orange bg-brand-orange/15 text-left transition-all">
+                                <div class="font-bold text-sm flex items-center justify-between">
+                                    <span>BEE 5-Star Premier</span>
+                                    <span class="text-[10px] bg-brand-orange text-white px-2 py-0.5 rounded uppercase">Popular</span>
+                                </div>
+                                <div class="text-xs text-gray-300 mt-0.5">High Efficiency + 10-Yr Coverage</div>
+                            </button>
+                            <button type="button" onclick="updateEstimatorTier(1.5, this)" class="est-tier-btn p-3.5 rounded-xl border border-white/15 bg-white/5 text-left transition-all">
+                                <div class="font-bold text-sm">Platinum Signature</div>
+                                <div class="text-xs text-gray-400 mt-0.5">Lifetime Workmanship Care</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Technical Scope Output Card (No Monetary Figures) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-950 border border-white/15 rounded-2xl p-8 shadow-2xl relative">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-5">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">RECOMMENDED SYSTEM SPECIFICATION</span>
+                                <div id="est-spec-output" class="font-condensed font-bold text-3xl sm:text-4xl text-white mt-1">
+                                    4.0 Ton Variable Inverter System
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-400 block">Billing & Payment</span>
+                                <span id="est-financing" class="text-sm font-bold text-emerald-400">No-Cost EMI (INR)</span>
+                            </div>
+                        </div>
+
+                        <!-- Breakdown Metrics -->
+                        <div class="py-6 space-y-4 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Projected Power Bill Reduction:</span>
+                                <span id="est-savings" class="font-bold text-emerald-400">Up to 32% / year</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Pricing & Quotation (INR / ₹):</span>
+                                <span id="est-quote-status" class="font-bold text-amber-400">Contact for Details</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Estimated Installation Timeline:</span>
+                                <span id="est-timeline" class="font-bold text-white">1 Day (8 Hours)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">GST-Compliant Invoice & Warranty:</span>
+                                <span class="font-bold text-white">Included</span>
+                            </div>
+                        </div>
+
+                        <button onclick="lockEstimateIntoModal()" class="w-full py-4 bg-brand-orange hover:bg-brand-orangeLight text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-orange-glow transition-all flex items-center justify-center space-x-2">
+                            <span>Contact for Details & Custom INR Quote</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </button>
+                        <p class="text-[11px] text-center text-gray-400 mt-3">
+                            Complimentary on-site thermal & structural assessment prior to final INR quotation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT US & WHY CHOOSE US
+         ========================================== -->
+    <section id="about" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Image Collage featuring the Reference Image -->
+            <div class="lg:col-span-6 relative">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="Comfort You Can Count On.png" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=85';"
+                         alt="Comfort You Can Count On - Local Home Services" 
+                         class="w-full h-[420px] object-cover" />
+                </div>
+                <!-- Floating Certification Card -->
+                <div class="bg-navy-900 text-white p-6 rounded-2xl shadow-xl border border-white/10 max-w-xs sm:absolute -bottom-6 -right-6 mt-4 sm:mt-0">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-11 h-11 rounded-full bg-brand-orange flex items-center justify-center flex-shrink-0 font-condensed font-bold text-xl">
+                            A+
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm">BBB Accredited & Licensed</div>
+                            <div class="text-xs text-gray-300">Background-checked master technicians in every trade.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">RELIABLE. PROFESSIONAL. LOCAL.</span>
+                <h2 class="font-condensed font-bold text-4xl sm:text-5xl text-navy-900 uppercase leading-tight">
+                    THREE DECADES OF PROTECTING LOCAL HOMES
+                </h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Whether it’s a sweltering July afternoon when your AC falters or a severe autumn storm testing your roof and gutters, our neighbors count on us for honest diagnostics, fair upfront pricing, and meticulous craftsmanship.
+                </p>
+
+                <!-- 3 Pillars matching the Hero Icons -->
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange/10 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-navy-900">Trusted Professionals</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-0.5">Every technician is NATE-certified, state-licensed, insured, and arrives in a fully stocked company vehicle.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange/10 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-navy-900">Quality Workmanship</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-0.5">We never cut corners—using heavy-gauge flashing, hospital-grade copper lines, and spotless jobsite cleanup.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-brand-orange/10 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-navy-900">On-Time Service Guarantee</h3>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-0.5">Real-time GPS text alerts 30 minutes before arrival. If we’re late for your window, your diagnostic is 100% free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BEFORE & AFTER INTERACTIVE GALLERY SECTION
+         ========================================== -->
+    <section id="gallery" class="py-20 bg-slate-100 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">PROVEN TRANSFORMATIONS</span>
+                <h2 class="font-condensed font-bold text-4xl sm:text-5xl text-navy-900 uppercase mt-1">
+                    DRAG TO COMPARE OUR WORKMANSHIP
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base mt-2">
+                    Slide the handle left and right to see how our architectural roofing, siding, and high-efficiency HVAC upgrades transform curb appeal and comfort.
+                </p>
+            </div>
+
+            <!-- Interactive Before / After Slider Container -->
+            <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white relative h-[360px] sm:h-[480px] comparison-slider" id="ba-slider">
+                <!-- AFTER IMAGE (Full width base layer: Reference Image / Golden Hour Upgraded Home) -->
+                <img src="Comfort You Can Count On.png" 
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1600&q=85';"
+                     alt="After Home Upgrade" 
+                     class="w-full h-full object-cover" />
+                <span class="absolute top-4 right-4 z-20 bg-brand-orange text-white text-xs font-bold uppercase px-3.5 py-1.5 rounded-full shadow">
+                    AFTER: New Architectural Roof + 20-SEER2 HVAC
+                </span>
+
+                <!-- BEFORE IMAGE (Clipped overlay layer with aged/weathered filter) -->
+                <div id="ba-before-layer" class="comparison-before">
+                    <img src="Comfort You Can Count On.png" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1600&q=85';"
+                         alt="Before Home Upgrade" 
+                         id="ba-before-img"
+                         class="h-full object-cover max-w-none filter grayscale contrast-75 brightness-75" />
+                    <span class="absolute top-4 left-4 z-20 bg-navy-900/90 text-white text-xs font-bold uppercase px-3.5 py-1.5 rounded-full shadow">
+                        BEFORE: Worn Shingles & Aging Condenser
+                    </span>
+                </div>
+
+                <!-- Slider Divider Line & Handle -->
+                <div id="ba-handle" class="absolute top-0 bottom-0 left-1/2 w-1 bg-brand-orange cursor-ew-resize z-30 flex items-center justify-center">
+                    <div class="w-11 h-11 rounded-full bg-brand-orange text-white border-4 border-white shadow-xl flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Accessible Range Overlay for smooth touch & mouse dragging -->
+                <input type="range" min="5" max="95" value="50" aria-label="Before and After comparison slider" oninput="moveComparisonSlider(this.value)" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SPECIAL OFFERS & SEASONAL PRIVILEGES (NO MONETARY TAGS - INR / VALUE FOCUSED)
+         ========================================== -->
+    <section id="offers" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">LIMITED-TIME HOMEOWNER PRIVILEGES</span>
+            <h2 class="font-condensed font-bold text-4xl sm:text-5xl text-navy-900 uppercase mt-1">
+                EXCLUSIVE SPECIAL OFFERS
+            </h2>
+            <p class="text-gray-600 text-sm sm:text-base mt-2">
+                Click any privilege code below to copy it and mention it when you contact us for your tailored INR quotation.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Offer 1 -->
+            <div class="bg-white rounded-2xl border-2 border-dashed border-brand-orange p-7 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div class="absolute -right-10 -top-10 w-24 h-24 bg-brand-orange/10 rounded-full"></div>
+                <div>
+                    <span class="inline-block bg-brand-orange/15 text-brand-orange font-bold text-xs uppercase px-3 py-1 rounded-md">Seasonal HVAC Privilege</span>
+                    <div class="font-condensed font-bold text-4xl text-navy-900 mt-4 uppercase">21-POINT TUNE-UP</div>
+                    <h3 class="font-bold text-lg text-navy-900 mt-1">Priority AC & Heat Pump Diagnostic Package</h3>
+                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                        Includes condenser coil wash, refrigerant pressure check, airflow balancing, and complimentary thermal leak scan. Contact for package details.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <button onclick="copyCouponCode('COMFORTCARE', this)" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-brand-orange hover:text-white text-navy-900 font-mono text-xs font-bold transition-colors">
+                        CODE: COMFORTCARE
+                    </button>
+                    <button onclick="openBookingModal('21-Point HVAC Tune-Up Privilege (Contact for Details)')" class="text-xs font-bold text-brand-orange hover:underline uppercase">
+                        Contact for Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Offer 2 -->
+            <div class="bg-navy-900 text-white rounded-2xl border-2 border-dashed border-brand-orange p-7 flex flex-col justify-between relative overflow-hidden shadow-xl">
+                <div>
+                    <span class="inline-block bg-brand-orange text-white font-bold text-xs uppercase px-3 py-1 rounded-md">Most Popular Upgrade</span>
+                    <div class="font-condensed font-bold text-4xl text-brand-orange mt-4 uppercase">NO-COST EMI (INR)</div>
+                    <h3 class="font-bold text-lg text-white mt-1">Complete Architectural Roof or Full HVAC System</h3>
+                    <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                        Enjoy flexible tenure No-Cost EMI options in INR plus a complimentary seamless leaf-guard gutter upgrade on full roof installations.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                    <button onclick="copyCouponCode('PREMIEREMI', this)" class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-brand-orange text-white font-mono text-xs font-bold transition-colors">
+                        CODE: PREMIEREMI
+                    </button>
+                    <button onclick="openBookingModal('Full Roof or HVAC Upgrade — No-Cost EMI (INR) Details')" class="text-xs font-bold text-brand-orange hover:underline uppercase">
+                        Contact for Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Offer 3 -->
+            <div class="bg-white rounded-2xl border-2 border-dashed border-brand-orange p-7 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div>
+                    <span class="inline-block bg-brand-orange/15 text-brand-orange font-bold text-xs uppercase px-3 py-1 rounded-md">Curb Appeal & Safety</span>
+                    <div class="font-condensed font-bold text-4xl text-navy-900 mt-4 uppercase">EXTENDED WARRANTY</div>
+                    <h3 class="font-bold text-lg text-navy-900 mt-1">Electrical Panel, Lighting & Exterior Upgrades</h3>
+                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                        Receive a complimentary 5-year extended workmanship warranty and free whole-home electrical safety audit with any exterior or lighting project.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <button onclick="copyCouponCode('SAFEHOME5', this)" class="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-brand-orange hover:text-white text-navy-900 font-mono text-xs font-bold transition-colors">
+                        CODE: SAFEHOME5
+                    </button>
+                    <button onclick="openBookingModal('Electrical & Exterior Extended Warranty Offer')" class="text-xs font-bold text-brand-orange hover:underline uppercase">
+                        Contact for Details &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         VERIFIED HOMEOWNER REVIEWS
+         ========================================== -->
+    <section id="reviews" class="py-20 bg-navy-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">NEIGHBORHOOD TESTIMONIALS</span>
+                    <h2 class="font-condensed font-bold text-4xl sm:text-5xl uppercase mt-1">
+                        WHY HOMEOWNERS TRUST US
+                    </h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl">
+                    <div class="text-amber-400 text-lg tracking-widest">★★★★★</div>
+                    <div class="text-xs text-gray-300"><strong>4.9 / 5.0</strong> across 1,840+ Verified Reviews</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-navy-900 border border-white/10 p-7 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-amber-400 text-sm">★★★★★</span>
+                            <span class="text-[11px] bg-brand-orange/20 text-brand-orange px-2.5 py-0.5 rounded font-semibold">HVAC & Smart Thermostat</span>
+                        </div>
+                        <p class="text-gray-200 text-sm leading-relaxed italic">
+                            "Our 14-year-old AC condenser died on a Friday afternoon. Home Services had a technician at our house within 90 minutes, gave us three crystal-clear options, and installed our new quiet heat pump the very next morning!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <div>
+                            <div class="font-bold text-white">Michael & Sarah Jenkins</div>
+                            <div class="text-gray-400">Oakridge Estates • Verified Homeowner</div>
+                        </div>
+                        <span class="text-emerald-400 font-semibold">✓ Verified</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-navy-900 border border-white/10 p-7 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-amber-400 text-sm">★★★★★</span>
+                            <span class="text-[11px] bg-brand-orange/20 text-brand-orange px-2.5 py-0.5 rounded font-semibold">Roofing & Seamless Gutters</span>
+                        </div>
+                        <p class="text-gray-200 text-sm leading-relaxed italic">
+                            "Look at our roof at sunset—it looks like a magazine cover! The crew protected all our landscaping bushes around the AC unit, finished the architectural shingles and white seamless gutters in one day, and left zero nails behind."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <div>
+                            <div class="font-bold text-white">David R. Callahan</div>
+                            <div class="text-gray-400">Maplewood • Verified Homeowner</div>
+                        </div>
+                        <span class="text-emerald-400 font-semibold">✓ Verified</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-navy-900 border border-white/10 p-7 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-amber-400 text-sm">★★★★★</span>
+                            <span class="text-[11px] bg-brand-orange/20 text-brand-orange px-2.5 py-0.5 rounded font-semibold">Exterior Lighting & Garage</span>
+                        </div>
+                        <p class="text-gray-200 text-sm leading-relaxed italic">
+                            "We hired them to install a 200-amp electrical panel, warm coach lantern lights by our side entry door, and an insulated garage door. Punctual, polite, and worth every penny."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <div>
+                            <div class="font-bold text-white">Elena Rostova</div>
+                            <div class="text-gray-400">Cedar Hills • Verified Homeowner</div>
+                        </div>
+                        <span class="text-emerald-400 font-semibold">✓ Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT & QUICK DISPATCH SECTION
+         ========================================== -->
+    <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-5 bg-navy-900 text-white p-8 sm:p-12 flex flex-col justify-between">
+                <div>
+                    <span class="text-brand-orange font-condensed font-bold text-lg uppercase tracking-wider">WE'RE READY TO HELP</span>
+                    <h2 class="font-condensed font-bold text-4xl uppercase mt-1">
+                        GET IN TOUCH OR SCHEDULE ONLINE
+                    </h2>
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                        Have a question about your HVAC unit, roof, or electrical system? Reach out directly or submit a fast service request.
+                    </p>
+
+                    <div class="mt-8 space-y-5 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">24/7 Dispatch Hotline</div>
+                                <div class="font-bold text-lg text-white">+91 1800-555-HOME</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Service Headquarters</div>
+                                <div class="font-semibold text-white">742 Evergreen Comfort Way, Suite 100</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange text-brand-orange flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase">Standard & Emergency Hours</div>
+                                <div class="font-semibold text-white">Mon–Sat: 7AM–8PM • 24/7 Emergency</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-6 border-t border-white/10 text-xs text-gray-400">
+                    Fully Licensed, Bonded & Insured • GST-Compliant Invoicing Available
+                </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="lg:col-span-7 p-8 sm:p-12">
+                <h3 class="font-condensed font-bold text-3xl text-navy-900 uppercase">Request Priority Service & Custom INR Quote</h3>
+                <p class="text-gray-600 text-sm mt-1 mb-6">Fill out the details below and our dispatch coordinator will contact you within 15 minutes with full service details.</p>
+
+                <form onsubmit="submitInlineContactForm(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" required placeholder="Aarav Sharma" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Phone Number (India) *</label>
+                            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Service Needed *</label>
+                            <select id="inline-service-select" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm bg-white">
+                                <option>HVAC Tune-Up / AC Repair (Contact for Details)</option>
+                                <option>Roofing & Seamless Gutters (Contact for Details)</option>
+                                <option>Electrical & Exterior Lighting (Contact for Details)</option>
+                                <option>Siding & Garage Doors (Contact for Details)</option>
+                                <option>Whole-Home Energy Audit (Contact for Details)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Privilege Code (Optional)</label>
+                            <input type="text" id="inline-promo-input" placeholder="e.g. COMFORTCARE" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm font-mono uppercase" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-6 border-t border-white/10 text-xs text-gray-400">
+                    Fully Licensed, Bonded & Insured • Master License #HS-904821
+                </div>
+            </div>
+
+            <!-- Right Form Column -->
+            <div class="lg:col-span-7 p-8 sm:p-12">
+                <h3 class="font-condensed font-bold text-3xl text-navy-900 uppercase">Request Priority Service</h3>
+                <p class="text-gray-600 text-sm mt-1 mb-6">Fill out the details below and our dispatch coordinator will confirm your appointment window within 15 minutes.</p>
+
+                <form onsubmit="submitInlineContactForm(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" required placeholder="Alex Morgan" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Phone Number *</label>
+                            <input type="tel" required placeholder="(555) 234-5678" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Service Needed *</label>
+                            <select id="inline-service-select" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm bg-white">
+                                <option>HVAC Tune-Up / AC Repair</option>
+                                <option>Roofing & Seamless Gutters</option>
+                                <option>Electrical & Exterior Lighting</option>
+                                <option>Siding & Garage Doors</option>
+                                <option>Whole-Home Energy Audit</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Promo Code (Optional)</label>
+                            <input type="text" id="inline-promo-input" placeholder="e.g. COMFORT69" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm font-mono uppercase" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">How Can We Help Your Home?</label>
+                        <textarea rows="3" placeholder="Tell us about your home project or symptoms..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full sm:w-auto px-9 py-4 bg-brand-orange hover:bg-brand-orangeLight text-white font-bold text-sm uppercase tracking-wider rounded-lg shadow-orange-glow transition-all flex items-center justify-center space-x-3">
+                        <span>SCHEDULE SERVICE NOW</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="bg-navy-950 text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="flex items-baseline tracking-tight text-2xl">
+                    <span class="font-bold text-white">Home</span>
+                    <span class="font-light text-gray-300 ml-1">Services</span>
+                </div>
+                <span class="text-xs text-brand-orange font-semibold uppercase tracking-wider border-l border-white/15 pl-3">Comfort You Can Count On</span>
+            </div>
+
+            <div class="text-xs text-center sm:text-right">
+                &copy; 2026 Home Services Portfolio Project. Designed for excellence & reliability.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         INTERACTIVE BOOKING MODAL
+         ========================================== -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-100 animate-fadeIn">
+            <div class="bg-navy-900 text-white px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-brand-orange block">ONLINE DISPATCH SCHEDULER</span>
+                    <h3 id="modal-service-title" class="font-condensed font-bold text-2xl uppercase">Schedule Home Service</h3>
+                </div>
+                <button onclick="closeBookingModal()" class="text-gray-400 hover:text-white p-1.5 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Selected Service</label>
+                    <input type="text" id="modal-service-input" readonly class="w-full px-3.5 py-2.5 rounded-lg bg-slate-100 border border-gray-200 text-navy-900 font-semibold text-sm" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Preferred Date *</label>
+                        <input type="date" required id="modal-date" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-brand-orange outline-none" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Arrival Window *</label>
+                        <select class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 text-sm bg-white focus:border-brand-orange outline-none">
+                            <option>Morning (8:00 AM – 11:00 AM)</option>
+                            <option>Midday (11:00 AM – 2:00 PM)</option>
+                            <option>Afternoon (2:00 PM – 5:00 PM)</option>
+                            <option>Evening Emergency</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Your Name *</label>
+                        <input type="text" required placeholder="Homeowner Name" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-brand-orange outline-none" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Mobile Phone *</label>
+                        <input type="tel" required placeholder="(555) 019-2834" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-brand-orange outline-none" />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Street Address & Zip Code *</label>
+                    <input type="text" required placeholder="123 Maple Street" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-brand-orange outline-none" />
+                </div>
+
+                <div class="pt-2 flex items-center justify-end space-x-3">
+                    <button type="button" onclick="closeBookingModal()" class="px-4 py-2.5 rounded-lg text-xs font-bold uppercase text-gray-500 hover:bg-gray-100">Cancel</button>
+                    <button type="submit" class="px-7 py-3 bg-brand-orange hover:bg-brand-orangeLight text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-orange-glow transition-all">
+                        Confirm Appointment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         REFERENCE IMAGE LIGHTBOX MODAL
+         ========================================== -->
+    <div id="ref-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/90 backdrop-blur-md p-4">
+        <div class="max-w-5xl w-full bg-navy-900 rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
+            <div class="px-6 py-4 flex items-center justify-between border-b border-white/10">
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Reference Image Showcase — Comfort You Can Count On.png</h4>
+                    <p id="local-img-status" class="text-xs text-amber-400 hidden">Tip: Place "Comfort You Can Count On.png" in the same folder as index.html or click "Load Image" in the top-right of the Hero to preview your local file directly.</p>
+                </div>
+                <button onclick="closeReferenceLightbox()" class="text-gray-300 hover:text-white p-1">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-4 bg-black flex items-center justify-center max-h-[80vh] overflow-auto">
+                <img id="lightbox-img" src="Comfort You Can Count On.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1800&q=85';" alt="Reference Design Full Preview" class="max-w-full max-h-[72vh] rounded-lg object-contain" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CUSTOM TOAST NOTIFICATION BANNER
+         ========================================== -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center space-x-3 bg-navy-900 text-white border border-brand-orange px-5 py-4 rounded-xl shadow-2xl max-w-sm">
+        <div class="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+            <div id="toast-title" class="font-bold text-sm">Success!</div>
+            <div id="toast-msg" class="text-xs text-gray-300 mt-0.5">Action completed.</div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT LOGIC & INTERACTIVITY
+         ========================================== -->
+    <script>
+        // Set default date picker to tomorrow
+        window.addEventListener('DOMContentLoaded', () => {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const dateInput = document.getElementById('modal-date');
+            if (dateInput) {
+                dateInput.valueAsDate = tomorrow;
+            }
+            syncBeforeImageWidth();
+        });
+
+        window.addEventListener('resize', syncBeforeImageWidth);
+
+        function syncBeforeImageWidth() {
+            const slider = document.getElementById('ba-slider');
+            const beforeImg = document.getElementById('ba-before-img');
+            if (slider && beforeImg) {
+                beforeImg.style.width = slider.offsetWidth + 'px';
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // Smooth Scroll Helper
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Hero Mode Switcher: Live Interactive vs Full Image Only
+        function setHeroMode(mode) {
+            const contentWrapper = document.getElementById('hero-content-wrapper');
+            const overlay1 = document.getElementById('hero-overlay-1');
+            const overlay2 = document.getElementById('hero-overlay-2');
+            const btnInteractive = document.getElementById('mode-interactive-btn');
+            const btnClean = document.getElementById('mode-clean-btn');
+
+            if (mode === 'clean') {
+                contentWrapper.classList.add('opacity-0', 'pointer-events-none');
+                overlay1.classList.add('opacity-0');
+                overlay2.classList.add('opacity-0');
+                btnClean.className = 'px-2.5 py-1 rounded-full bg-brand-orange text-white font-semibold transition-all';
+                btnInteractive.className = 'px-2.5 py-1 rounded-full hover:bg-white/10 text-gray-300 transition-all';
+                showToast('Full Image Mode Active', 'Showing the unobstructed front-page image.');
+            } else {
+                contentWrapper.classList.remove('opacity-0', 'pointer-events-none');
+                overlay1.classList.remove('opacity-0');
+                overlay2.classList.remove('opacity-0');
+                btnInteractive.className = 'px-2.5 py-1 rounded-full bg-brand-orange text-white font-semibold transition-all';
+                btnClean.className = 'px-2.5 py-1 rounded-full hover:bg-white/10 text-gray-300 transition-all';
+            }
+        }
+
+        // Allow user to load their local "Comfort You Can Count On.png" via file picker if viewing in a sandboxed preview
+        function loadCustomHeroImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                document.getElementById('hero-bg-img').src = dataUrl;
+                document.getElementById('thumb-ref-img').src = dataUrl;
+                document.getElementById('lightbox-img').src = dataUrl;
+                document.getElementById('local-img-status').classList.add('hidden');
+                showToast('Reference Image Loaded!', 'Applied your image across the front page.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Hero Slider Dots (8 slides matching the 8 dots at bottom of reference image)
+        const heroSlides = [
+            {
+                eyebrow: 'RELIABLE. PROFESSIONAL. LOCAL.',
+                title: 'COMFORT YOU<br />CAN COUNT ON',
+                subtitle: 'Expert home services for a more comfortable, efficient, and beautiful home.',
+                img: 'Comfort You Can Count On.png',
+                fallback: 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: '20-SEER2 CLIMATE PRECISION',
+                title: 'WHISPER-QUIET<br />HOME COOLING',
+                subtitle: 'High-efficiency variable-speed heat pumps and AC systems backed by a 10-year warranty.',
+                img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2000&q=85',
+                fallback: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: 'ARCHITECTURAL PROTECTION',
+                title: 'ROOFING BUILT<br />FOR EVERY STORM',
+                subtitle: 'Class-4 dimensional shingles and seamless aluminum gutters installed in a single day.',
+                img: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=2000&q=85',
+                fallback: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: 'RELIABLE. PROFESSIONAL. LOCAL.',
+                title: 'COMFORT YOU<br />CAN COUNT ON',
+                subtitle: 'Golden-hour curb appeal meets year-round indoor energy efficiency.',
+                img: 'Comfort You Can Count On.png',
+                fallback: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: 'MASTER LICENSED ELECTRICIANS',
+                title: 'SAFE POWER &<br />WARM LIGHTING',
+                subtitle: '200-Amp service panels, standby generators, and dusk-to-dawn exterior coach lanterns.',
+                img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2000&q=85',
+                fallback: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: 'EXTERIOR CRAFTSMANSHIP',
+                title: 'INSULATED SIDING<br />& GARAGE DOORS',
+                subtitle: 'Boost your home value and thermal performance with rot-free siding and quiet doors.',
+                img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85',
+                fallback: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: '24/7 RAPID RESPONSE',
+                title: 'ON-TIME SERVICE<br />GUARANTEED',
+                subtitle: 'Live GPS technician tracking and upfront flat-rate pricing with zero hidden fees.',
+                img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85',
+                fallback: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=2000&q=85'
+            },
+            {
+                eyebrow: 'SEASONAL PRIVILEGES AVAILABLE',
+                title: 'TAILORED PLANS &<br />NO-COST EMI (INR)',
+                subtitle: 'Schedule a complimentary on-site inspection and contact us for a customized INR quotation.',
+                img: 'Comfort You Can Count On.png',
+                fallback: 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=2000&q=85'
+            }
+        ];
+
+        function switchHeroSlide(index) {
+            const slide = heroSlides[index];
+            if (!slide) return;
+
+            // Ensure interactive text mode is visible
+            setHeroMode('interactive');
+
+            document.getElementById('hero-eyebrow').innerHTML = slide.eyebrow;
+            document.getElementById('hero-title').innerHTML = slide.title;
+            document.getElementById('hero-subtitle').innerHTML = slide.subtitle;
+
+            const bgImg = document.getElementById('hero-bg-img');
+            bgImg.onerror = function() {
+                this.onerror = null;
+                this.src = slide.fallback;
+            };
+            bgImg.src = slide.img;
+
+            // Update dot styles
+            const dots = document.querySelectorAll('.hero-dot');
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.className = 'hero-dot w-3.5 h-3.5 rounded-full bg-brand-orange transition-all scale-110';
+                } else if (i === 0) {
+                    dot.className = 'hero-dot w-3 h-3 rounded-full bg-white/90 hover:bg-white transition-all';
+                } else {
+                    dot.className = 'hero-dot w-2.5 h-2.5 rounded-full bg-gray-400/70 hover:bg-white transition-all';
+                }
+            });
+        }
+
+        // Hotspot Click Handler
+        function openHotspotDetail(type) {
+            const titles = {
+                roof: 'Architectural Shingle Roof & Seamless Gutters',
+                hvac: '20-SEER2 High-Efficiency HVAC System',
+                lighting: 'Smart Exterior Coach Lighting & Garage Upgrade'
+            };
+            openBookingModal(titles[type] || 'Home Exterior Inspection');
+        }
+
+        // Filter Services Grid
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const tabs = document.querySelectorAll('.service-tab');
+
+            tabs.forEach(tab => {
+                if (tab.dataset.filter === category) {
+                    tab.className = 'service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-brand-orange text-white transition-all shadow';
+                } else {
+                    tab.className = 'service-tab px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gray-200/80 text-navy-900 hover:bg-brand-orange hover:text-white transition-all';
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Interactive Technical Scope & Efficiency Estimator Logic (No Monetary Figures - INR Context)
+        let currentEstService = 'hvac';
+        let currentEstTier = 1.25;
+
+        const scopeProfiles = {
+            hvac: {
+                getSpec: (sqft) => `${(sqft / 600).toFixed(1)} Ton Variable Inverter HVAC`,
+                baseEfficiency: 26,
+                timeline: '1 Day (8 Hours)'
+            },
+            roof: {
+                getSpec: (sqft) => `${Math.round(sqft * 1.15).toLocaleString()} sq.ft. Architectural Roof`,
+                baseEfficiency: 22,
+                timeline: '1–2 Days'
+            },
+            electrical: {
+                getSpec: (sqft) => sqft > 2600 ? '3-Phase Smart Panel + Surge Guard' : 'Heavy-Duty Distribution + Lighting',
+                baseEfficiency: 18,
+                timeline: '4–6 Hours'
+            },
+            exterior: {
+                getSpec: (sqft) => `${Math.round(sqft * 0.85).toLocaleString()} sq.ft. Cladding + Garage Door`,
+                baseEfficiency: 24,
+                timeline: '2–3 Days'
+            }
+        };
+
+        function updateEstimatorService(serviceKey, btnEl) {
+            currentEstService = serviceKey;
+            document.querySelectorAll('.est-service-btn').forEach(btn => {
+                btn.className = 'est-service-btn p-3.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-left transition-all';
+            });
+            btnEl.className = 'est-service-btn p-3.5 rounded-xl border-2 border-brand-orange bg-brand-orange/15 text-left transition-all';
+            recalculateEstimate();
+        }
+
+        function updateEstimatorTier(tierMultiplier, btnEl) {
+            currentEstTier = tierMultiplier;
+            document.querySelectorAll('.est-tier-btn').forEach(btn => {
+                btn.className = 'est-tier-btn p-3.5 rounded-xl border border-white/15 bg-white/5 text-left transition-all';
+            });
+            btnEl.className = 'est-tier-btn p-3.5 rounded-xl border-2 border-brand-orange bg-brand-orange/15 text-left transition-all';
+            recalculateEstimate();
+        }
+
+        function recalculateEstimate() {
+            const sqft = parseInt(document.getElementById('sqft-slider').value, 10);
+            document.getElementById('sqft-display').textContent = sqft.toLocaleString() + ' sq. ft.';
+
+            const profile = scopeProfiles[currentEstService];
+            const efficiencyGain = Math.min(42, Math.round(profile.baseEfficiency * currentEstTier));
+
+            document.getElementById('est-spec-output').textContent = profile.getSpec(sqft);
+            document.getElementById('est-financing').textContent = currentEstTier >= 1.25 ? 'No-Cost EMI (INR)' : 'Custom INR Plan';
+            document.getElementById('est-savings').textContent = `Up to ${efficiencyGain}% / year`;
+            document.getElementById('est-quote-status').textContent = 'Contact for Details';
+            document.getElementById('est-timeline').textContent = profile.timeline;
+        }
+
+        function lockEstimateIntoModal() {
+            const sqft = document.getElementById('sqft-slider').value;
+            const spec = document.getElementById('est-spec-output').textContent;
+            openBookingModal(`${spec} (${sqft} sq.ft. • Contact for Custom INR Quote)`);
+        }
+
+        // Before / After Slider Handler
+        function moveComparisonSlider(val) {
+            const beforeLayer = document.getElementById('ba-before-layer');
+            const handle = document.getElementById('ba-handle');
+            beforeLayer.style.width = val + '%';
+            handle.style.left = val + '%';
+        }
+
+        // Copy Coupon Code using execCommand for iframe compatibility
+        function copyCouponCode(code, btnEl) {
+            const tempInput = document.createElement('input');
+            tempInput.value = code;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const originalText = btnEl.textContent;
+            btnEl.textContent = '✓ COPIED: ' + code;
+            const promoInput = document.getElementById('inline-promo-input');
+            if (promoInput) promoInput.value = code;
+
+            showToast('Promo Code Copied!', `Code ${code} has been applied to your service request.`);
+            setTimeout(() => {
+                btnEl.textContent = originalText;
+            }, 2500);
+        }
+
+        // Booking Modal Controls
+        function openBookingModal(serviceName) {
+            const modal = document.getElementById('booking-modal');
+            document.getElementById('modal-service-title').textContent = serviceName;
+            document.getElementById('modal-service-input').value = serviceName;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const service = document.getElementById('modal-service-input').value;
+            closeBookingModal();
+            showToast('Appointment Confirmed!', `Your ${service} request is scheduled. A dispatch specialist will text you shortly.`);
+            e.target.reset();
+        }
+
+        function submitInlineContactForm(e) {
+            e.preventDefault();
+            const service = document.getElementById('inline-service-select').value;
+            showToast('Priority Request Received!', `We received your ${service} inquiry and will call you within 15 minutes.`);
+            e.target.reset();
+        }
+
+        // Reference Lightbox Controls
+        function openReferenceLightbox() {
+            const lb = document.getElementById('ref-lightbox');
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+        }
+
+        function closeReferenceLightbox() {
+            const lb = document.getElementById('ref-lightbox');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+        }
+
+        // Custom Toast Notification
+        let toastTimeout;
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-msg').textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 4500);
+        }
+    </script>
+</body>
+</html>

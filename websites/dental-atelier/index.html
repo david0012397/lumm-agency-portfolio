@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOURA | Private Dental & Aesthetic Atelier — Luxury Operatory Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (High-Fashion Editorial Serif) + Plus Jakarta Sans (Clean Modern Medical UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        petrol: {
+                            950: '#04121a',
+                            900: '#071d29',
+                            800: '#0b2b3c',
+                            700: '#123e54'
+                        },
+                        cove: {
+                            gold: '#f59e0b',
+                            amber: '#fbbf24',
+                            warm: '#fef3c7',
+                            champagne: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'cove-glow': '0 0 45px -5px rgba(245, 158, 11, 0.38)',
+                        'cove-intense': '0 0 70px 10px rgba(251, 191, 36, 0.52)',
+                        'glass': '0 24px 48px -12px rgba(4, 18, 26, 0.65)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #04121a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Signature Recessed Ceiling Cove LED Frame Effect inspired by image_0258a1.jpg */
+        .cove-ceiling-border {
+            position: relative;
+        }
+        .cove-ceiling-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(251,191,36,0.85) 0%, rgba(245,158,11,0.18) 45%, rgba(18,62,84,0.6) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Ambient Cove Light Halo */
+        .ambient-cove-halo {
+            background: radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.24) 0%, rgba(245, 158, 11, 0.08) 38%, rgba(7, 29, 41, 0) 72%);
+        }
+
+        /* Interactive Hotspot Pulse */
+        @keyframes sonarPulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            70% { transform: scale(2.2); opacity: 0; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        .hotspot-ring::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            border: 2px solid #fbbf24;
+            animation: sonarPulse 2.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+        }
+
+        /* Custom Glassmorphism */
+        .atelier-glass {
+            background: rgba(7, 29, 41, 0.76);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Interactive Tooth Node in Smile Configurator */
+        .tooth-node {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tooth-node.selected {
+            background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+            color: #04121a;
+            border-color: #fef3c7;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.6);
+        }
+
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #04121a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #123e54;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cove-amber selection:text-petrol-950">
+
+    <!-- ==========================================
+         FLOATING ARCHITECTURAL PILL NAVIGATION
+         ========================================== -->
+    <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto atelier-glass rounded-2xl px-5 sm:px-8 h-20 flex items-center justify-between shadow-glass cove-ceiling-border">
+            
+            <!-- Brand Emblem: VELOURA DENTAL ATELIER -->
+            <a href="#" class="flex items-center space-x-3.5 group focus:outline-none">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cove-amber/25 to-petrol-800 border border-cove-amber/50 flex items-center justify-center shadow-cove-glow group-hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-cove-amber" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 10C5 6.5 8.5 4 14 4C19.5 4 23 6.5 23 10C23 14.5 19.5 23 16.5 23C15 23 14.5 19 14 19C13.5 19 13 23 11.5 23C8.5 23 5 14.5 5 10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M9 9.5C11.5 11.5 16.5 11.5 19 9.5" stroke="#fef3c7" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-2xl sm:text-3xl tracking-wide text-white block leading-none">VELOURA</span>
+                    <span class="text-[10px] uppercase tracking-[0.28em] text-cove-amber font-semibold block mt-1">Dental & Aesthetic Atelier</span>
+                </div>
+            </a>
+
+            <!-- Center Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-[0.16em] text-slate-300">
+                <a href="#operatory-tour" class="hover:text-cove-amber transition-colors">The Suite</a>
+                <a href="#bespoke-care" class="hover:text-cove-amber transition-colors">Specialties</a>
+                <a href="#smile-architect" class="hover:text-cove-amber transition-colors">Smile Architect</a>
+                <a href="#cove-therapy" class="hover:text-cove-amber transition-colors">Light Therapy</a>
+                <a href="#privileges" class="hover:text-cove-amber transition-colors">Privileges</a>
+                <a href="#concierge" class="hover:text-cove-amber transition-colors">Concierge</a>
+            </nav>
+
+            <!-- Right Actions: Local Image Loader + Private Consultation CTA -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <label class="cursor-pointer px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-cove-warm font-medium transition-all flex items-center space-x-1.5" title="Load image_0258a1.jpg from your computer if previewing locally">
+                    <svg class="w-4 h-4 text-cove-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>Sync Suite Image</span>
+                    <input type="file" accept="image/*" class="hidden" onchange="loadUserSuiteImage(event)">
+                </label>
+
+                <button onclick="openBookingModal('Private Executive Suite Consultation')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cove-amber to-cove-gold text-petrol-950 font-bold text-xs uppercase tracking-wider shadow-cove-glow hover:brightness-110 transition-all active:scale-95">
+                    Reserve Suite
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileNav()" class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:text-cove-amber">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden mt-2 max-w-7xl mx-auto atelier-glass rounded-2xl p-6 space-y-4 border border-cove-amber/30">
+            <a href="#operatory-tour" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">The Suite Tour</a>
+            <a href="#bespoke-care" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">Clinical Specialties</a>
+            <a href="#smile-architect" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">Interactive Smile Architect</a>
+            <a href="#cove-therapy" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">Circadian Light Therapy</a>
+            <a href="#privileges" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">Patient Privileges</a>
+            <a href="#concierge" onclick="toggleMobileNav()" class="block text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-cove-amber">Concierge Desk</a>
+            <div class="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <label class="cursor-pointer py-3 px-4 rounded-xl bg-white/10 text-center text-xs font-bold uppercase tracking-wider text-cove-amber">
+                    Load Local Image (image_0258a1.jpg)
+                    <input type="file" accept="image/*" class="hidden" onchange="loadUserSuiteImage(event)">
+                </label>
+                <button onclick="toggleMobileNav(); openBookingModal('Private Suite Consultation');" class="py-3 px-5 rounded-xl bg-cove-amber text-petrol-950 font-bold text-xs uppercase tracking-wider">
+                    Reserve Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         ARCHITECTURAL EDITORIAL HERO SECTION (Bento Split + Interactive Operatory Image)
+         ========================================== -->
+    <section class="relative min-h-screen pt-32 pb-16 lg:pt-36 lg:pb-24 flex items-center ambient-cove-halo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Column: High-Fashion Clinical Editorial Typography (5 Cols) -->
+                <div class="lg:col-span-5 space-y-7">
+                    <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-cove-amber/10 border border-cove-amber/30">
+                        <span class="w-2 h-2 rounded-full bg-cove-amber animate-ping"></span>
+                        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-cove-amber">Bespoke Dental Architecture • India</span>
+                    </div>
+
+                    <h1 class="font-serif text-5xl sm:text-6xl xl:text-[68px] font-semibold text-white leading-[1.03] tracking-tight">
+                        Where Clinical Precision Meets <span class="italic font-normal text-cove-amber">Sanctuary.</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+                        Experience anxiety-free microscopic dentistry inside our signature petrol-teal and warm 2700K cove-lit twin operatory. Engineered for painless 3D implants, porcelain veneers, and full-mouth rejuvenation.
+                    </p>
+
+                    <!-- Interactive Quick-Stats Pills -->
+                    <div class="grid grid-cols-3 gap-3 pt-1">
+                        <div class="p-3.5 rounded-2xl bg-petrol-900/90 border border-white/10">
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-cove-amber">2700K</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Circadian Cove LED</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-petrol-900/90 border border-white/10">
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-white">Dual</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Specialist Suite</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-petrol-900/90 border border-white/10">
+                            <div class="font-serif text-2xl sm:text-3xl font-bold text-cove-amber">0% EMI</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Custom INR Plans</div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Hero CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openBookingModal('Private Smile & Implant Consultation')" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cove-amber to-cove-gold text-petrol-950 font-bold text-xs sm:text-sm uppercase tracking-widest shadow-cove-glow hover:scale-[1.02] transition-all flex items-center space-x-3">
+                            <span>Book Private Consultation</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </button>
+                        <a href="#smile-architect" class="px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all">
+                            Launch 3D Smile Planner
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: The Featured Operatory Image (image_0258a1.jpg) inside a Cove-Lit Interactive Architectural Frame (7 Cols) -->
+                <div class="lg:col-span-7" id="operatory-tour">
+                    <div id="hero-frame" class="relative rounded-3xl overflow-hidden shadow-cove-glow cove-ceiling-border bg-petrol-900 transition-all duration-500">
+                        
+                        <!-- Top Bar inside Frame: Live Operatory Telemetry -->
+                        <div class="bg-petrol-950/90 backdrop-blur-md px-5 py-3.5 border-b border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
+                            <div class="flex items-center space-x-2.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                <span class="font-semibold tracking-wider uppercase text-slate-200">OPERATORY SUITE 01 — LIVE ARCHITECTURAL VIEW</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="toggleHotspotsVisibility()" id="toggle-pins-btn" class="px-3 py-1 rounded-lg bg-cove-amber/20 text-cove-amber font-semibold hover:bg-cove-amber hover:text-petrol-950 transition-all">
+                                    Hide Spec Pins
+                                </button>
+                                <button onclick="openLightboxModal()" class="px-3 py-1 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-all">
+                                    Full Screen
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Image Container featuring image_0258a1.jpg -->
+                        <div class="relative aspect-[4/3] w-full overflow-hidden bg-petrol-950">
+                            <img id="main-suite-img"
+                                 src="image_0258a1.jpg"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=85'; document.getElementById('local-file-hint').classList.remove('hidden');"
+                                 alt="Veloura Luxury Petrol-Teal and Warm Cove-Lit Dual Dental Operatory"
+                                 class="w-full h-full object-cover object-center transition-all duration-700" />
+
+                            <!-- Subtle Warm Cove Vignette -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-petrol-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+                            <!-- INTERACTIVE HOTSPOT PINS MAPPED EXACTLY TO image_0258a1.jpg -->
+                            <div id="suite-hotspots-layer" class="absolute inset-0">
+                                
+                                <!-- Pin 1: Warm 2700K Recessed Cove LED Ceiling (Top Curve) -->
+                                <button onclick="selectOperatoryZone(0)" style="top: 16%; left: 32%;" class="hotspot-pin absolute -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-cove-amber text-petrol-950 font-bold text-xs flex items-center justify-center shadow-lg hotspot-ring hover:scale-125 transition-transform" aria-label="Inspect Ceiling Cove Lighting">
+                                    01
+                                </button>
+
+                                <!-- Pin 2: Dual Ceiling Shadowless Surgical LEDs & HEPA Cassette -->
+                                <button onclick="selectOperatoryZone(1)" style="top: 34%; left: 52%;" class="hotspot-pin absolute -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-petrol-950/90 text-cove-amber border-2 border-cove-amber font-bold text-xs flex items-center justify-center shadow-lg hotspot-ring hover:scale-125 transition-transform" aria-label="Inspect Surgical Optics">
+                                    02
+                                </button>
+
+                                <!-- Pin 3: Twin Ergonomic Ivory Leather Hydraulic Dental Chairs -->
+                                <button onclick="selectOperatoryZone(2)" style="top: 71%; left: 28%;" class="hotspot-pin absolute -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-petrol-950/90 text-cove-amber border-2 border-cove-amber font-bold text-xs flex items-center justify-center shadow-lg hotspot-ring hover:scale-125 transition-transform" aria-label="Inspect Ergonomic Dental Lounge">
+                                    03
+                                </button>
+
+                                <!-- Pin 4: Right-Side Integrated Digital CAD/CAM & Sterilization Cabinetry -->
+                                <button onclick="selectOperatoryZone(3)" style="top: 62%; left: 82%;" class="hotspot-pin absolute -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-petrol-950/90 text-cove-amber border-2 border-cove-amber font-bold text-xs flex items-center justify-center shadow-lg hotspot-ring hover:scale-125 transition-transform" aria-label="Inspect Digital Workstation">
+                                    04
+                                </button>
+                            </div>
+
+                            <!-- Live Selected Zone HUD Card (Bottom Overlay inside Image) -->
+                            <div class="absolute bottom-4 left-4 right-4 z-20 atelier-glass rounded-2xl p-4 sm:p-5 border border-cove-amber/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div class="space-y-1">
+                                    <div class="flex items-center space-x-2">
+                                        <span id="zone-badge" class="px-2.5 py-0.5 rounded bg-cove-amber text-petrol-950 font-bold text-[10px] uppercase tracking-wider">ZONE 01 • CIRCADIAN COVE</span>
+                                        <span class="text-xs text-cove-warm font-medium">Click pins 01–04 on the photo to explore</span>
+                                    </div>
+                                    <h3 id="zone-title" class="font-serif text-xl sm:text-2xl font-semibold text-white">
+                                        2700K Warm Perimeter Cove Illumination
+                                    </h3>
+                                    <p id="zone-desc" class="text-xs text-slate-300 max-w-xl leading-relaxed">
+                                        Continuous curved architectural LED cove lighting eliminates harsh overhead glare and reduces patient cortisol levels before treatment begins.
+                                    </p>
+                                </div>
+                                <button onclick="openBookingModal('Private Tour & Consultation — ' + document.getElementById('zone-title').textContent)" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-cove-amber hover:text-petrol-950 text-white text-xs font-bold uppercase tracking-wider transition-all flex-shrink-0">
+                                    Inquire Details &rarr;
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Selector Tabs for the 4 Zones in image_0258a1.jpg -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 bg-petrol-950 border-t border-white/10 divide-x divide-white/10 text-left">
+                            <button onclick="selectOperatoryZone(0)" class="zone-tab p-3.5 bg-cove-amber/15 border-b-2 border-cove-amber transition-all">
+                                <span class="text-[10px] font-bold text-cove-amber block">01 • AMBIENCE</span>
+                                <span class="text-xs font-semibold text-white mt-0.5 block truncate">Warm Cove Ceiling</span>
+                            </button>
+                            <button onclick="selectOperatoryZone(1)" class="zone-tab p-3.5 hover:bg-white/5 transition-all">
+                                <span class="text-[10px] font-bold text-slate-400 block">02 • OPTICS & AIR</span>
+                                <span class="text-xs font-semibold text-slate-200 mt-0.5 block truncate">Dual Surgical LEDs</span>
+                            </button>
+                            <button onclick="selectOperatoryZone(2)" class="zone-tab p-3.5 hover:bg-white/5 transition-all">
+                                <span class="text-[10px] font-bold text-slate-400 block">03 • ERGONOMICS</span>
+                                <span class="text-xs font-semibold text-slate-200 mt-0.5 block truncate">Twin Memory Chairs</span>
+                            </button>
+                            <button onclick="selectOperatoryZone(3)" class="zone-tab p-3.5 hover:bg-white/5 transition-all">
+                                <span class="text-[10px] font-bold text-slate-400 block">04 • DIGITAL LAB</span>
+                                <span class="text-xs font-semibold text-slate-200 mt-0.5 block truncate">3D Scan Workstation</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CIRCADIAN AMBIENCE & LIGHTING MODE SWITCHER (Interactive Demonstration of the Room's Lighting)
+         ========================================== -->
+    <section id="cove-therapy" class="py-16 border-y border-white/10 bg-petrol-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-cove-amber">SENSORY ARCHITECTURE</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-semibold">
+                        Interactive Operatory Lighting Simulation
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Notice how our suite (`image_0258a1.jpg`) pairs deep acoustic petrol-teal walls with warm indirect ceiling illumination. Toggle the clinical lighting presets below to see how we adapt the room for every stage of your visit.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <button onclick="applyLightingPreset('sanctuary', this)" class="light-preset-btn p-5 rounded-2xl border-2 border-cove-amber bg-cove-amber/15 text-left transition-all">
+                        <div class="flex items-center justify-between">
+                            <span class="w-3 h-3 rounded-full bg-cove-amber shadow-cove-glow"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-cove-amber">Active Mode</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mt-3">2700K Warm Sanctuary</h3>
+                        <p class="text-xs text-slate-300 mt-1">Golden cove relaxation mode for anxiety-free consultations and anesthesia induction.</p>
+                    </button>
+
+                    <button onclick="applyLightingPreset('surgical', this)" class="light-preset-btn p-5 rounded-2xl border border-white/15 bg-petrol-950/60 hover:bg-white/5 text-left transition-all">
+                        <div class="flex items-center justify-between">
+                            <span class="w-3 h-3 rounded-full bg-sky-300"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">5500K Daylight</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mt-3">Shadowless Precision</h3>
+                        <p class="text-xs text-slate-300 mt-1">High-CRI dual ceiling operating optics for microscopic root canals and implant placement.</p>
+                    </button>
+
+                    <button onclick="applyLightingPreset('shade', this)" class="light-preset-btn p-5 rounded-2xl border border-white/15 bg-petrol-950/60 hover:bg-white/5 text-left transition-all">
+                        <div class="flex items-center justify-between">
+                            <span class="w-3 h-3 rounded-full bg-amber-100"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Color-Matched</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mt-3">Porcelain Shade Studio</h3>
+                        <p class="text-xs text-slate-300 mt-1">Neutral spectrum calibration for matching E.max veneers and zirconia crowns to natural enamel.</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BESPOKE CLINICAL SPECIALTIES (Asymmetric Editorial Grid — Zero Fixed Prices, INR Context)
+         ========================================== -->
+    <section id="bespoke-care" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-[0.22em] text-cove-amber">CLINICAL CRAFTSMANSHIP</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-semibold mt-2">
+                    Curated Dental & Aesthetic Disciplines
+                </h2>
+            </div>
+            <!-- Specialty Filter Pills -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterSpecialties('all', this)" class="spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-cove-amber text-petrol-950 transition-all">
+                    All Disciplines
+                </button>
+                <button onclick="filterSpecialties('implants', this)" class="spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-petrol-900 text-slate-300 border border-white/10 hover:border-cove-amber transition-all">
+                    Implantology
+                </button>
+                <button onclick="filterSpecialties('veneers', this)" class="spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-petrol-900 text-slate-300 border border-white/10 hover:border-cove-amber transition-all">
+                    Aesthetic Veneers
+                </button>
+                <button onclick="filterSpecialties('endodontics', this)" class="spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-petrol-900 text-slate-300 border border-white/10 hover:border-cove-amber transition-all">
+                    Laser & Endodontics
+                </button>
+            </div>
+        </div>
+
+        <!-- Editorial Bento Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Specialty 1: Dual-Chair Collaborative Full-Mouth Rehabilitation (Uses image_0258a1.jpg) -->
+            <div data-spec="implants" class="spec-card lg:col-span-2 rounded-3xl overflow-hidden bg-petrol-900/90 border border-white/10 hover:border-cove-amber/50 transition-all duration-300 grid grid-cols-1 md:grid-cols-12 group">
+                <div class="md:col-span-6 relative min-h-[280px] overflow-hidden">
+                    <img src="image_0258a1.jpg"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80';"
+                         alt="Twin-Chair Executive Implant & Rehabilitation Operatory"
+                         class="suite-synced-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-petrol-950/85 backdrop-blur-md border border-cove-amber/40 text-cove-amber text-[11px] font-bold uppercase tracking-wider">
+                        Signature Suite Protocol
+                    </div>
+                </div>
+                <div class="md:col-span-6 p-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400">01 • SWISS & GERMAN IMPLANTOLOGY</span>
+                        <h3 class="font-serif text-3xl text-white font-semibold mt-1 group-hover:text-cove-amber transition-colors">
+                            3D Computer-Guided Implants & Full-Arch Rehab
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-3">
+                            Executed inside our sterile dual-chair suite with CBCT 3D surgical stents, flapless keyhole placement, and immediate-load monolithic zirconia bridges.
+                        </p>
+                        <div class="mt-5 grid grid-cols-2 gap-2 text-xs text-cove-warm">
+                            <div class="flex items-center space-x-2"><span>✦</span><span>All-on-4 / All-on-6</span></div>
+                            <div class="flex items-center space-x-2"><span>✦</span><span>Lifetime Global Warranty</span></div>
+                            <div class="flex items-center space-x-2"><span>✦</span><span>Zero-Suture Keyhole</span></div>
+                            <div class="flex items-center space-x-2"><span>✦</span><span>0% No-Cost EMI (INR)</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-7 pt-5 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 block">Treatment Tariff (INR / ₹)</span>
+                            <span class="text-sm font-bold text-cove-amber">Contact for Details</span>
+                        </div>
+                        <button onclick="openBookingModal('3D Guided Dental Implants — Custom INR Consultation')" class="px-5 py-2.5 rounded-xl bg-cove-amber text-petrol-950 font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all">
+                            Request Dossier &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty 2: Ultra-Thin E.max Porcelain Veneers -->
+            <div data-spec="veneers" class="spec-card rounded-3xl overflow-hidden bg-petrol-900/90 border border-white/10 hover:border-cove-amber/50 transition-all duration-300 flex flex-col justify-between p-8 group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-cove-amber">02 • AESTHETIC COUTURE</span>
+                        <span class="w-10 h-10 rounded-xl bg-cove-amber/15 border border-cove-amber/30 flex items-center justify-center text-cove-amber font-serif text-lg">V</span>
+                    </div>
+                    <h3 class="font-serif text-3xl text-white font-semibold group-hover:text-cove-amber transition-colors">
+                        Hand-Layered E.max Porcelain Veneers
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-3">
+                        0.2mm contact-lens thin lithium disilicate veneers custom-designed on our chairside workstation so you can test-drive your new smile before bonding.
+                    </p>
+                    <ul class="mt-5 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Digital Facial-Flow Smile Simulation</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Natural Enamel Opalescence & Texture</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Laser Gum Line Sculpting Included</span></li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 block">Fee Structure (INR)</span>
+                        <span class="text-sm font-bold text-white">Contact for Details</span>
+                    </div>
+                    <button onclick="openBookingModal('E.max Porcelain Veneers — Custom INR Quote')" class="text-xs font-bold uppercase tracking-wider text-cove-amber hover:underline">
+                        Consult Now &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Specialty 3: Single-Sitting Microscopic Laser Root Canal -->
+            <div data-spec="endodontics" class="spec-card rounded-3xl overflow-hidden bg-petrol-900/90 border border-white/10 hover:border-cove-amber/50 transition-all duration-300 flex flex-col justify-between p-8 group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-cove-amber">03 • MICRO-ENDODONTICS</span>
+                        <span class="w-10 h-10 rounded-xl bg-cove-amber/15 border border-cove-amber/30 flex items-center justify-center text-cove-amber font-serif text-lg">L</span>
+                    </div>
+                    <h3 class="font-serif text-3xl text-white font-semibold group-hover:text-cove-amber transition-colors">
+                        Single-Sitting Diode Laser Root Canal
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-3">
+                        Relax beneath our warm 2700K ceiling cove while our endodontists perform painless rotary and laser-assisted canal sterilization in one 45-minute appointment.
+                    </p>
+                    <ul class="mt-5 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Digital Wand Painless Local Anesthesia</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>99.9% Bacterial Eradication via Laser</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Same-Day CAD/CAM Zirconia Crown Option</span></li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 block">Fee Structure (INR)</span>
+                        <span class="text-sm font-bold text-white">Contact for Details</span>
+                    </div>
+                    <button onclick="openBookingModal('Single-Sitting Laser Root Canal — Custom INR Quote')" class="text-xs font-bold uppercase tracking-wider text-cove-amber hover:underline">
+                        Consult Now &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Specialty 4: Invisible Clear Aligners -->
+            <div data-spec="veneers" class="spec-card rounded-3xl overflow-hidden bg-petrol-900/90 border border-white/10 hover:border-cove-amber/50 transition-all duration-300 flex flex-col justify-between p-8 group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-cove-amber">04 • DIGITAL ORTHODONTICS</span>
+                        <span class="w-10 h-10 rounded-xl bg-cove-amber/15 border border-cove-amber/30 flex items-center justify-center text-cove-amber font-serif text-lg">A</span>
+                    </div>
+                    <h3 class="font-serif text-3xl text-white font-semibold group-hover:text-cove-amber transition-colors">
+                        3D Optical Scan Invisible Aligners
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-3">
+                        Zero messy putty impressions. Our chairside 3D scanner maps 6,000 images per second to craft transparent, removable aligners with predictable weekly progress.
+                    </p>
+                    <ul class="mt-5 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Instant 3D Outcome Simulation on Screen</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Remote AI Monitoring for Busy Executives</span></li>
+                        <li class="flex items-center space-x-2"><span class="text-cove-amber">●</span><span>Complimentary Retainers & Whitening Gel</span></li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-slate-400 block">Fee Structure (INR)</span>
+                        <span class="text-sm font-bold text-white">Contact for Details</span>
+                    </div>
+                    <button onclick="openBookingModal('3D Invisible Clear Aligners — Custom INR Quote')" class="text-xs font-bold uppercase tracking-wider text-cove-amber hover:underline">
+                        Consult Now &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Specialty 5: Couple & Family Simultaneous Twin-Chair Lounge -->
+            <div data-spec="endodontics" class="spec-card rounded-3xl overflow-hidden bg-gradient-to-br from-petrol-800 to-petrol-950 border border-cove-amber/40 p-8 flex flex-col justify-between group">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-cove-amber text-petrol-950 font-bold text-[10px] uppercase tracking-wider">Exclusive to Our Dual Operatory</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold mt-4">
+                        Twin-Chair Bridal, Couple & Family Dental Spa
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-3">
+                        Why wait in a lobby? Our signature dual-chair suite (`image_0258a1.jpg`) allows couples, parents with children, or bridal parties to receive Swiss Airflow polishing and photo-whitening simultaneously in total privacy.
+                    </p>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/15 flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-cove-warm block">Private Suite Reservation</span>
+                        <span class="text-sm font-bold text-cove-amber">Contact for Details</span>
+                    </div>
+                    <button onclick="openBookingModal('Twin-Chair Couple & Family Dental Spa Suite')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-cove-amber hover:text-petrol-950 text-white font-bold text-xs uppercase tracking-wider transition-all">
+                        Book Dual Suite &rarr;
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         INTERACTIVE 3D SMILE ARCH CONFIGURATOR (Unique Dental Interactive Tool — No Prices, INR Context)
+         ========================================== -->
+    <section id="smile-architect" class="py-24 bg-petrol-900/70 border-y border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-[0.22em] text-cove-amber">INTERACTIVE CLINICAL PLANNER</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-semibold mt-2">
+                    Digital Smile Arch & Treatment Configurator
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-3">
+                    Tap individual teeth on the interactive upper arch below or choose a preset smile zone to build your personalized clinical dossier. All fees are tailored in INR (`₹`) upon specialist evaluation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Column: Interactive 16-Tooth Aesthetic Arch Map (7 Cols) -->
+                <div class="lg:col-span-7 atelier-glass rounded-3xl p-6 sm:p-10 cove-ceiling-border">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-cove-amber block">STEP 1 • SELECT TEETH OR SMILE PRESET</span>
+                            <span class="text-xs text-slate-400">Click any tooth number (FDI Notation) to toggle selection</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="selectToothPreset('social6')" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-cove-amber hover:text-petrol-950 text-xs font-semibold transition-all">
+                                Social 6 (Front)
+                            </button>
+                            <button onclick="selectToothPreset('smile10')" class="px-3 py-1.5 rounded-lg bg-cove-amber text-petrol-950 text-xs font-bold transition-all">
+                               Hollywood 10
+                            </button>
+                            <button onclick="selectToothPreset('full16')" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-cove-amber hover:text-petrol-950 text-xs font-semibold transition-all">
+                                Full Arch (16)
+                            </button>
+                            <button onclick="selectToothPreset('single')" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-cove-amber hover:text-petrol-950 text-xs font-semibold transition-all">
+                                Single Implant
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Curved Dental Arch Grid -->
+                    <div class="py-8 px-2 bg-petrol-950/80 rounded-2xl border border-white/10">
+                        <div class="text-center text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-6">
+                            UPPER MAXILLARY AESTHETIC ARCH (CLICK TO TOGGLE)
+                        </div>
+                        <div id="tooth-arch-container" class="grid grid-cols-8 sm:grid-cols-16 gap-1.5 sm:gap-2 max-w-2xl mx-auto">
+                            <!-- Populated dynamically via JS for clean interactivity -->
+                        </div>
+                        <div class="flex items-center justify-center space-x-6 mt-6 text-xs text-slate-400">
+                            <span class="flex items-center space-x-2"><span class="w-3 h-3 rounded bg-cove-amber inline-block"></span><span>Selected for Treatment</span></span>
+                            <span class="flex items-center space-x-2"><span class="w-3 h-3 rounded bg-petrol-800 border border-white/20 inline-block"></span><span>Untouched Natural Tooth</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Select Clinical Modality & Porcelain Shade -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-cove-amber mb-2.5">STEP 2 • CLINICAL MODALITY</label>
+                            <select id="arch-modality" onchange="updateArchDossier()" class="w-full px-4 py-3.5 rounded-xl bg-petrol-950 border border-white/15 text-white text-sm focus:border-cove-amber outline-none">
+                                <option value="E.max Lithium Disilicate Veneers">Ultra-Thin E.max Porcelain Veneers</option>
+                                <option value="3D Guided Titanium Implants + Zirconia">3D Guided Dental Implants + Zirconia Crown</option>
+                                <option value="Monolithic German Zirconia Crowns">Laser Root Canal + German Zirconia Crowns</option>
+                                <option value="3D Digital Clear Aligners + Whitening">3D Clear Aligners + Swiss Airflow Whitening</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-cove-amber mb-2.5">STEP 3 • ENAMEL SHADE PALETTE</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button type="button" onclick="setShade('BL1 Hollywood Bleach', this)" class="shade-btn py-2.5 px-2 rounded-xl border-2 border-cove-amber bg-white text-petrol-950 font-bold text-xs text-center">
+                                    BL1
+                                </button>
+                                <button type="button" onclick="setShade('BL2 Natural Bright', this)" class="shade-btn py-2.5 px-2 rounded-xl border border-white/20 bg-amber-50/90 text-petrol-950 font-semibold text-xs text-center">
+                                    BL2
+                                </button>
+                                <button type="button" onclick="setShade('A1 Warm Pearl', this)" class="shade-btn py-2.5 px-2 rounded-xl border border-white/20 bg-amber-100/90 text-petrol-950 font-semibold text-xs text-center">
+                                    A1
+                                </button>
+                                <button type="button" onclick="setShade('B1 Translucent Ivory', this)" class="shade-btn py-2.5 px-2 rounded-xl border border-white/20 bg-orange-100/90 text-petrol-950 font-semibold text-xs text-center">
+                                    B1
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Clinical Dossier Output (5 Cols) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-petrol-950 rounded-3xl p-8 border border-cove-amber/40 shadow-cove-glow space-y-6">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-5">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-cove-amber">YOUR CUSTOM CLINICAL DOSSIER</span>
+                                <h3 id="dossier-units-title" class="font-serif text-3xl text-white font-semibold mt-1">
+                                    10-Unit Aesthetic Smile Zone
+                                </h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold">
+                                0% EMI (INR)
+                            </span>
+                        </div>
+
+                        <div class="space-y-3.5 text-sm">
+                            <div class="flex justify-between py-2 border-b border-white/5">
+                                <span class="text-slate-400">Selected Modality:</span>
+                                <span id="dossier-modality" class="font-semibold text-white text-right">Ultra-Thin E.max Porcelain Veneers</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/5">
+                                <span class="text-slate-400">Target Enamel Shade:</span>
+                                <span id="dossier-shade" class="font-semibold text-cove-warm">BL1 Hollywood Bleach</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/5">
+                                <span class="text-slate-400">Operatory Suite Allocation:</span>
+                                <span class="font-semibold text-white">Twin-Chair Cove Suite 01</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-white/5">
+                                <span class="text-slate-400">Estimated Clinical Visits:</span>
+                                <span id="dossier-visits" class="font-semibold text-emerald-400">2 Visits (Digital Trial Smile + Bonding)</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-slate-400">Treatment Quotation (INR / ₹):</span>
+                                <span class="font-bold text-cove-amber uppercase tracking-wider">Contact for Details</span>
+                            </div>
+                        </div>
+
+                        <button onclick="bookConfiguredSmile()" class="w-full py-4 rounded-xl bg-gradient-to-r from-cove-amber to-cove-gold text-petrol-950 font-bold text-xs sm:text-sm uppercase tracking-widest shadow-cove-glow hover:brightness-110 transition-all">
+                            Request Custom INR Quote for This Plan &rarr;
+                        </button>
+                        <p class="text-[11px] text-slate-400 text-center">
+                            Includes 3D intraoral optical scan & chairside digital mockup preview.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PATIENT PRIVILEGES & MEMBERSHIP TIERS (Zero Fixed Prices — INR Context)
+         ========================================== -->
+    <section id="privileges" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-[0.22em] text-cove-amber">BESPOKE COURTESIES</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-white font-semibold mt-2">
+                Exclusive Patient Privileges
+            </h2>
+            <p class="text-slate-300 text-sm mt-2">
+                Tap any privilege code to copy it to your clipboard and apply it automatically to your private consultation request.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Privilege 1 -->
+            <div class="rounded-3xl bg-petrol-900/80 border border-white/10 p-8 flex flex-col justify-between hover:border-cove-amber/50 transition-all">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-cove-amber bg-cove-amber/10 px-3 py-1 rounded-full">Diagnostic Privilege</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold mt-4">3D Digital Smile Simulation</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                        Receive a radiation-safe digital diagnostic assessment and chairside 3D intraoral scan on our operatory monitor (`image_0258a1.jpg`). Contact for details.
+                    </p>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <button onclick="copyPrivilegeCode('VELOURA3D', this)" class="px-3.5 py-2 rounded-xl bg-petrol-950 border border-cove-amber/40 text-cove-amber font-mono text-xs font-bold hover:bg-cove-amber hover:text-petrol-950 transition-all">
+                        CODE: VELOURA3D
+                    </button>
+                    <button onclick="openBookingModal('3D Digital Smile Simulation Privilege — Contact for Details')" class="text-xs font-bold text-white hover:text-cove-amber uppercase tracking-wider">
+                        Apply &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Privilege 2 -->
+            <div class="rounded-3xl bg-gradient-to-b from-petrol-800 to-petrol-950 border-2 border-cove-amber p-8 flex flex-col justify-between shadow-cove-glow">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-petrol-950 bg-cove-amber px-3 py-1 rounded-full">Most Requested</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold mt-4">0% No-Cost EMI (INR) Plan</h3>
+                    <p class="text-xs text-slate-200 leading-relaxed mt-2">
+                        Split your 3D dental implants, E.max veneers, or clear aligner treatment into convenient zero-interest monthly INR (`₹`) installments with instant digital approval.
+                    </p>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/15 flex items-center justify-between">
+                    <button onclick="copyPrivilegeCode('INRZEROEMI', this)" class="px-3.5 py-2 rounded-xl bg-cove-amber text-petrol-950 font-mono text-xs font-bold hover:brightness-110 transition-all">
+                        CODE: INRZEROEMI
+                    </button>
+                    <button onclick="openBookingModal('0% No-Cost EMI (INR) Treatment Plan Inquiry')" class="text-xs font-bold text-cove-amber hover:underline uppercase tracking-wider">
+                        Contact for Details &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Privilege 3 -->
+            <div class="rounded-3xl bg-petrol-900/80 border border-white/10 p-8 flex flex-col justify-between hover:border-cove-amber/50 transition-all">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-cove-amber bg-cove-amber/10 px-3 py-1 rounded-full">Twin-Chair Suite</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold mt-4">Couple & Bridal Lounge</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                        Reserve both ergonomic chairs in our executive operatory simultaneously for pre-wedding laser whitening and Swiss Airflow enamel spa polishing.
+                    </p>
+                </div>
+                <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <button onclick="copyPrivilegeCode('TWINSUITE', this)" class="px-3.5 py-2 rounded-xl bg-petrol-950 border border-cove-amber/40 text-cove-amber font-mono text-xs font-bold hover:bg-cove-amber hover:text-petrol-950 transition-all">
+                        CODE: TWINSUITE
+                    </button>
+                    <button onclick="openBookingModal('Twin-Chair Bridal & Couple Lounge — Contact for Details')" class="text-xs font-bold text-white hover:text-cove-amber uppercase tracking-wider">
+                        Apply &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PRIVATE CONCIERGE & RESERVATION DESK
+         ========================================== -->
+    <section id="concierge" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl atelier-glass cove-ceiling-border overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-glass">
+            
+            <!-- Left Suite Preview & Direct Contact Details -->
+            <div class="lg:col-span-5 bg-petrol-950/90 p-8 sm:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-cove-amber">PRIVATE CONCIERGE DESK</span>
+                    <h2 class="font-serif text-4xl text-white font-semibold leading-tight">
+                        Schedule Your Private Operatory Visit
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Every appointment is strictly one-on-one with zero waiting room overlap. Contact us for personalized treatment timelines and fee details in INR (`₹`).
+                    </p>
+
+                    <!-- Mini Suite Preview Card -->
+                    <div class="p-3.5 rounded-2xl bg-petrol-900 border border-white/10 flex items-center space-x-4">
+                        <img src="image_0258a1.jpg"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=400&q=80';"
+                             alt="Veloura Operatory Suite"
+                             class="suite-synced-img w-20 h-16 rounded-xl object-cover border border-cove-amber/40 flex-shrink-0" />
+                        <div>
+                            <div class="text-xs font-bold text-cove-amber uppercase">Executive Dual Operatory</div>
+                            <div class="text-xs text-slate-300 mt-0.5">ISO Class-B Sterilized • 2700K Warm Cove Suite</div>
+                            <p id="local-file-hint" class="text-[11px] text-amber-300 mt-1 hidden">Click "Sync Suite Image" in the top bar to preview your local file.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 pt-2 text-sm">
+                        <div class="flex items-center space-x-3.5">
+                            <span class="w-9 h-9 rounded-xl bg-cove-amber/15 border border-cove-amber/40 text-cove-amber flex items-center justify-center font-bold">✆</span>
+                            <div>
+                                <div class="text-[11px] text-slate-400 uppercase">Direct Concierge Line (India)</div>
+                                <div class="font-semibold text-white">+91 1800-309-VELOURA</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3.5">
+                            <span class="w-9 h-9 rounded-xl bg-cove-amber/15 border border-cove-amber/40 text-cove-amber flex items-center justify-center font-bold">✦</span>
+                            <div>
+                                <div class="text-[11px] text-slate-400 uppercase">Private Visiting Hours</div>
+                                <div class="font-semibold text-white">Mon – Sun: 10:00 AM – 8:30 PM (By Appointment)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 mt-8 border-t border-white/10 text-[11px] text-slate-400">
+                    100% Transparent INR Consultation • GST Invoice & Health Finance Support
+                </div>
+            </div>
+
+            <!-- Right Consultation Request Form -->
+            <div class="lg:col-span-7 p-8 sm:p-12">
+                <h3 class="font-serif text-3xl text-white font-semibold">Request Custom INR Treatment Dossier</h3>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 mb-8">Our senior treatment coordinator will contact you within 15 minutes with available slots and fee structure details.</p>
+
+                <form onsubmit="submitConciergeForm(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1.5">Patient Full Name *</label>
+                            <input type="text" required placeholder="e.g. Siddharth Singhania" class="w-full px-4 py-3.5 rounded-xl bg-petrol-950/90 border border-white/15 text-white text-sm focus:border-cove-amber outline-none" />
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1.5">WhatsApp / Mobile (+91) *</label>
+                            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3.5 rounded-xl bg-petrol-950/90 border border-white/15 text-white text-sm focus:border-cove-amber outline-none" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1.5">Clinical Discipline *</label>
+                            <select id="concierge-service" class="w-full px-4 py-3.5 rounded-xl bg-petrol-950/90 border border-white/15 text-white text-sm focus:border-cove-amber outline-none">
+                                <option>3D Guided Dental Implants (Contact for Details)</option>
+                                <option>E.max Porcelain Veneers & Smile Design (Contact for Details)</option>
+                                <option>Single-Sitting Laser Root Canal (Contact for Details)</option>
+                                <option>3D Invisible Clear Aligners (Contact for Details)</option>
+                                <option>Twin-Chair Couple / Family Suite (Contact for Details)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1.5">Privilege Code</label>
+                            <input type="text" id="concierge-code" placeholder="e.g. VELOURA3D" class="w-full px-4 py-3.5 rounded-xl bg-petrol-950/90 border border-white/15 text-cove-amber font-mono text-sm uppercase focus:border-cove-amber outline-none" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1.5">Clinical Notes or Preferred Time</label>
+                        <textarea rows="3" placeholder="Share your smile goals or preferred consultation date..." class="w-full px-4 py-3.5 rounded-xl bg-petrol-950/90 border border-white/15 text-white text-sm focus:border-cove-amber outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="px-9 py-4 rounded-xl bg-gradient-to-r from-cove-amber to-cove-gold text-petrol-950 font-bold text-xs sm:text-sm uppercase tracking-widest shadow-cove-glow hover:brightness-110 transition-all">
+                        Confirm Private Consultation Request &rarr;
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         MINIMAL LUXURY FOOTER
+         ========================================== -->
+    <footer class="py-12 border-t border-white/10 bg-petrol-950 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="font-serif font-bold text-xl text-white">VELOURA</span>
+                <span class="text-cove-amber uppercase tracking-widest text-[10px]">Dental & Aesthetic Atelier</span>
+            </div>
+            <div>
+                Designed around `image_0258a1.jpg` • All Treatment Fees in INR (`₹`) — Contact for Details.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         BOOKING MODAL
+         ========================================== -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-petrol-950/85 backdrop-blur-md p-4">
+        <div class="max-w-lg w-full rounded-3xl atelier-glass cove-ceiling-border p-6 sm:p-8 shadow-glass">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-cove-amber block">VELOURA PRIVATE RESERVATION</span>
+                    <h3 id="modal-title" class="font-serif text-2xl text-white font-semibold mt-0.5">Reserve Suite Consultation</h3>
+                </div>
+                <button onclick="closeBookingModal()" class="text-slate-400 hover:text-white p-1">✕</button>
+            </div>
+            <form onsubmit="submitModalForm(event)" class="space-y-4 mt-5">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-300 mb-1">Selected Consultation / Plan</label>
+                    <input type="text" id="modal-plan-input" readonly class="w-full px-4 py-2.5 rounded-xl bg-petrol-950 border border-cove-amber/40 text-cove-amber text-xs font-semibold" />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase text-slate-300 mb-1">Patient Name *</label>
+                        <input type="text" required placeholder="Full Name" class="w-full px-4 py-2.5 rounded-xl bg-petrol-950 border border-white/15 text-white text-sm outline-none focus:border-cove-amber" />
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase text-slate-300 mb-1">Mobile (+91) *</label>
+                        <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-petrol-950 border border-white/15 text-white text-sm outline-none focus:border-cove-amber" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase text-slate-300 mb-1">Preferred Date *</label>
+                        <input type="date" id="modal-date-picker" required class="w-full px-4 py-2.5 rounded-xl bg-petrol-950 border border-white/15 text-white text-sm outline-none focus:border-cove-amber" />
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase text-slate-300 mb-1">Suite Preference</label>
+                        <select class="w-full px-4 py-2.5 rounded-xl bg-petrol-950 border border-white/15 text-white text-sm outline-none focus:border-cove-amber">
+                            <option>Single Private Lounge</option>
+                            <option>Twin-Chair Couple/Family Suite</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-3 flex justify-end space-x-3">
+                    <button type="button" onclick="closeBookingModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/5">Cancel</button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-cove-amber text-petrol-950 font-bold text-xs uppercase tracking-wider">Confirm & Request INR Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         FULL-SCREEN OPERATORY LIGHTBOX
+         ========================================== -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-petrol-950/95 backdrop-blur-xl p-4">
+        <div class="max-w-5xl w-full rounded-3xl overflow-hidden bg-petrol-900 border border-cove-amber/40 shadow-2xl">
+            <div class="px-6 py-4 flex items-center justify-between border-b border-white/10">
+                <span class="text-xs font-bold uppercase tracking-widest text-cove-amber">VELOURA OPERATORY SUITE — image_0258a1.jpg</span>
+                <button onclick="closeLightboxModal()" class="text-slate-300 hover:text-white text-sm font-bold">✕ Close</button>
+            </div>
+            <div class="p-4 bg-black flex justify-center">
+                <img src="image_0258a1.jpg"
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=85';"
+                     alt="Full Resolution Operatory Suite"
+                     class="suite-synced-img max-h-[75vh] w-auto object-contain rounded-xl" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         TOAST NOTIFICATION
+         ========================================== -->
+    <div id="toast-banner" class="fixed bottom-6 right-6 z-50 hidden items-center space-x-3 atelier-glass border border-cove-amber px-5 py-4 rounded-2xl shadow-cove-glow max-w-sm">
+        <span class="w-7 h-7 rounded-full bg-cove-amber text-petrol-950 font-bold flex items-center justify-center text-xs">✓</span>
+        <div>
+            <div id="toast-head" class="text-xs font-bold uppercase tracking-wider text-cove-amber">Updated</div>
+            <div id="toast-body" class="text-xs text-slate-200 mt-0.5">Action completed.</div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE SCRIPTS
+         ========================================== -->
+    <script>
+        // 1. Operatory Zones Data for image_0258a1.jpg
+        const operatoryZones = [
+            {
+                badge: 'ZONE 01 • CIRCADIAN COVE',
+                title: '2700K Warm Perimeter Cove Illumination',
+                desc: 'Continuous curved architectural LED cove lighting eliminates harsh overhead glare and lowers patient anxiety before treatment begins.'
+            },
+            {
+                badge: 'ZONE 02 • OPTICS & HEPA AIR',
+                title: 'Dual Shadowless Ceiling Surgical LEDs & HEPA Cassette',
+                desc: 'Twin articulated German surgical lamps paired with a recessed ceiling laminar airflow purifier maintain ISO Class-B sterility.'
+            },
+            {
+                badge: 'ZONE 03 • TWIN LOUNGES',
+                title: 'Dual Ergonomic Ivory Leather Hydraulic Dental Units',
+                desc: 'Ultra-plush memory-foam lounges with articulated intraoral HD displays allow solo or simultaneous couple/family treatments.'
+            },
+            {
+                badge: 'ZONE 04 • DIGITAL ATELIER',
+                title: 'Integrated 3D CAD/CAM & Sterilization Cabinetry',
+                desc: 'Seamless white clinical cabinetry housing our chairside 3D smile design monitor, ultrasonic cleaners, and sealed instrument drawers.'
+            }
+        ];
+
+        function selectOperatoryZone(idx) {
+            const z = operatoryZones[idx];
+            if (!z) return;
+            document.getElementById('zone-badge').textContent = z.badge;
+            document.getElementById('zone-title').textContent = z.title;
+            document.getElementById('zone-desc').textContent = z.desc;
+
+            const tabs = document.querySelectorAll('.zone-tab');
+            tabs.forEach((t, i) => {
+                if (i === idx) {
+                    t.className = 'zone-tab p-3.5 bg-cove-amber/15 border-b-2 border-cove-amber transition-all';
+                } else {
+                    t.className = 'zone-tab p-3.5 hover:bg-white/5 transition-all';
+                }
+            });
+        }
+
+        let pinsVisible = true;
+        function toggleHotspotsVisibility() {
+            pinsVisible = !pinsVisible;
+            const layer = document.getElementById('suite-hotspots-layer');
+            const btn = document.getElementById('toggle-pins-btn');
+            if (pinsVisible) {
+                layer.classList.remove('opacity-0', 'pointer-events-none');
+                btn.textContent = 'Hide Spec Pins';
+            } else {
+                layer.classList.add('opacity-0', 'pointer-events-none');
+                btn.textContent = 'Show Spec Pins';
+            }
+        }
+
+        // 2. Sync Local User Image across all instances of image_0258a1.jpg
+        function loadUserSuiteImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const url = e.target.result;
+                document.getElementById('main-suite-img').src = url;
+                document.querySelectorAll('.suite-synced-img').forEach(img => {
+                    img.src = url;
+                });
+                const hint = document.getElementById('local-file-hint');
+                if (hint) hint.classList.add('hidden');
+                triggerToast('Suite Image Synced', 'Your local operatory image is now live across the entire portfolio.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // 3. Circadian Lighting Preset Simulator on the Main Suite Image
+        function applyLightingPreset(mode, btnEl) {
+            const img = document.getElementById('main-suite-img');
+            const frame = document.getElementById('hero-frame');
+            document.querySelectorAll('.light-preset-btn').forEach(b => {
+                b.className = 'light-preset-btn p-5 rounded-2xl border border-white/15 bg-petrol-950/60 hover:bg-white/5 text-left transition-all';
+            });
+            btnEl.className = 'light-preset-btn p-5 rounded-2xl border-2 border-cove-amber bg-cove-amber/15 text-left transition-all';
+
+            if (mode === 'sanctuary') {
+                img.style.filter = ' contrast(1.03) saturate(1.08)';
+                frame.className = 'relative rounded-3xl overflow-hidden shadow-cove-glow cove-ceiling-border bg-petrol-900 transition-all duration-500';
+                triggerToast('2700K Warm Sanctuary Mode', 'Restored signature warm amber cove lighting.');
+            } else if (mode === 'surgical') {
+                img.style.filter = 'brightness(1.08) contrast(1.12) hue-rotate(-8deg)';
+                frame.className = 'relative rounded-3xl overflow-hidden shadow-cove-intense cove-ceiling-border bg-petrol-900 transition-all duration-500';
+                triggerToast('5500K Surgical Precision Mode', 'Simulated high-CRI daylight optics for micro-surgery.');
+            } else if (mode === 'shade') {
+                img.style.filter = 'saturate(0.92) contrast(1.05) brightness(1.04)';
+                frame.className = 'relative rounded-3xl overflow-hidden shadow-glass cove-ceiling-border bg-petrol-900 transition-all duration-500';
+                triggerToast('Porcelain Shade-Matching Mode', 'Neutral spectrum calibrated for E.max veneer shade selection.');
+            }
+        }
+
+        // 4. Specialty Filter
+        function filterSpecialties(cat, btnEl) {
+            document.querySelectorAll('.spec-filter-btn').forEach(b => {
+                b.className = 'spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-petrol-900 text-slate-300 border border-white/10 hover:border-cove-amber transition-all';
+            });
+            btnEl.className = 'spec-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-cove-amber text-petrol-950 transition-all';
+
+            document.querySelectorAll('.spec-card').forEach(card => {
+                if (cat === 'all' || card.dataset.spec === cat) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // 5. Interactive 16-Tooth Aesthetic Arch Configurator
+        const fdiTeeth = [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28];
+        let selectedTeeth = new Set([15, 14, 13, 12, 11, 21, 22, 23, 24, 25]); // Default Hollywood 10
+        let currentShade = 'BL1 Hollywood Bleach';
+
+        function renderToothArch() {
+            const container = document.getElementById('tooth-arch-container');
+            if (!container) return;
+            container.innerHTML = '';
+            fdiTeeth.forEach(num => {
+                const isSelected = selectedTeeth.has(num);
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `tooth-node h-14 rounded-t-lg rounded-b-2xl border border-white/20 flex flex-col items-center justify-center text-xs font-bold ${isSelected ? 'selected' : 'bg-petrol-800/80 text-slate-300 hover:border-cove-amber'}`;
+                btn.innerHTML = `<span>${num}</span><span class="w-2 h-1 rounded-full mt-1 ${isSelected ? 'bg-petrol-950' : 'bg-white/20'}"></span>`;
+                btn.onclick = () => {
+                    if (selectedTeeth.has(num)) {
+                        if (selectedTeeth.size > 1) selectedTeeth.delete(num);
+                    } else {
+                        selectedTeeth.add(num);
+                    }
+                    renderToothArch();
+                    updateArchDossier();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function selectToothPreset(preset) {
+            if (preset === 'social6') {
+                selectedTeeth = new Set([13, 12, 11, 21, 22, 23]);
+            } else if (preset === 'smile10') {
+                selectedTeeth = new Set([15, 14, 13, 12, 11, 21, 22, 23, 24, 25]);
+            } else if (preset === 'full16') {
+                selectedTeeth = new Set(fdiTeeth);
+            } else if (preset === 'single') {
+                selectedTeeth = new Set([11]);
+            }
+            renderToothArch();
+            updateArchDossier();
+        }
+
+        function setShade(shadeName, btnEl) {
+            currentShade = shadeName;
+            document.querySelectorAll('.shade-btn').forEach(b => {
+                b.classList.remove('border-2', 'border-cove-amber');
+                b.classList.add('border', 'border-white/20');
+            });
+            btnEl.classList.remove('border', 'border-white/20');
+            btnEl.classList.add('border-2', 'border-cove-amber');
+            updateArchDossier();
+        }
+
+        function updateArchDossier() {
+            const count = selectedTeeth.size;
+            const modality = document.getElementById('arch-modality').value;
+            document.getElementById('dossier-units-title').textContent = count === 1 ? 'Single-Tooth Precision Restoration' : `${count}-Unit Custom Smile Arch`;
+            document.getElementById('dossier-modality').textContent = modality;
+            document.getElementById('dossier-shade').textContent = currentShade;
+
+            let visits = '2 Visits (Digital Scan + Final Delivery)';
+            if (modality.includes('Aligners')) visits = '1 Digital Scan Visit + Home Aligners';
+            if (modality.includes('Root Canal')) visits = 'Single-Sitting Laser Protocol';
+            document.getElementById('dossier-visits').textContent = visits;
+        }
+
+        function bookConfiguredSmile() {
+            const count = selectedTeeth.size;
+            const modality = document.getElementById('arch-modality').value;
+            openBookingModal(`${count}-Unit ${modality} (${currentShade}) — Custom INR Quote`);
+        }
+
+        // 6. Copy Privilege Code
+        function copyPrivilegeCode(code, btnEl) {
+            const temp = document.createElement('input');
+            temp.value = code;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+
+            const codeInput = document.getElementById('concierge-code');
+            if (codeInput) codeInput.value = code;
+
+            const oldText = btnEl.textContent;
+            btnEl.textContent = '✓ COPIED: ' + code;
+            triggerToast('Privilege Code Applied', `Code ${code} copied and added to your concierge form.`);
+            setTimeout(() => { btnEl.textContent = oldText; }, 2500);
+        }
+
+        // 7. Modals & Navigation
+        function toggleMobileNav() {
+            document.getElementById('mobile-drawer').classList.toggle('hidden');
+        }
+
+        function openBookingModal(planTitle) {
+            document.getElementById('modal-plan-input').value = planTitle;
+            const m = document.getElementById('booking-modal');
+            m.classList.remove('hidden');
+            m.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const m = document.getElementById('booking-modal');
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+        }
+
+        function openLightboxModal() {
+            const lb = document.getElementById('lightbox-modal');
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+        }
+
+        function closeLightboxModal() {
+            const lb = document.getElementById('lightbox-modal');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+        }
+
+        function submitModalForm(e) {
+            e.preventDefault();
+            const plan = document.getElementById('modal-plan-input').value;
+            closeBookingModal();
+            triggerToast('Private Suite Reserved', `We received your request for ${plan}. Our coordinator will call you shortly with INR details.`);
+            e.target.reset();
+        }
+
+        function submitConciergeForm(e) {
+            e.preventDefault();
+            const s = document.getElementById('concierge-service').value;
+            triggerToast('Dossier Request Received', `Our senior coordinator will share your ${s} INR plan within 15 minutes.`);
+            e.target.reset();
+        }
+
+        let toastTimer;
+        function triggerToast(head, body) {
+            const t = document.getElementById('toast-banner');
+            document.getElementById('toast-head').textContent = head;
+            document.getElementById('toast-body').textContent = body;
+            t.classList.remove('hidden');
+            t.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                t.classList.add('hidden');
+                t.classList.remove('flex');
+            }, 4200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderToothArch();
+            updateArchDossier();
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const picker = document.getElementById('modal-date-picker');
+            if (picker) picker.valueAsDate = tomorrow;
+        });
+    </script>
+</body>
+</html>

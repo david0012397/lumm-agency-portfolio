@@ -8,6 +8,12 @@ Built with pure, lightning-fast vanilla HTML5, CSS3, and JavaScript — zero dep
 
 ## ⚡ Live Highlights & Features
 
+- **✦ Websites Created & Engineered (Interactive Live Demos)**:
+  - 🦷 **VELOURA | Private Dental & Aesthetic Atelier**: An ultra-luxury operatory portfolio featuring an interactive 3D lighting engine simulation (2700K warm sanctuary, shadowless precision, porcelain shade matching) and high-ticket surgical consultation flow.
+    - [Launch Live Website ↗](./websites/dental-atelier/index.html)
+  - 🏡 **Comfort First | Residential Home Services**: A conversion-engineered multi-trade home services platform (HVAC, architectural roofing, electrical, air filtration) with instant quote estimators and emergency dispatch triggers.
+    - [Launch Live Website ↗](./websites/home-services/index.html)
+
 - **All 10 Core Services (from `lumm.in` + Performance Paid Ads)**:
   1. **Short-Form Video Editing** (Reels, TikToks, Shorts with retention pacing & kinetic typography)
   2. **Social Media Management** (Monthly calendar, captions, scheduling & reports)
@@ -21,6 +27,7 @@ Built with pure, lightning-fast vanilla HTML5, CSS3, and JavaScript — zero dep
   10. **Paid Ad Creation & Performance Creatives** (Direct response UGC & Meta/TikTok variants)
 
 - **Interactive Features**:
+  - 🌐 **In-Page Interactive Website Previewer**: Built-in modal allowing visitors to test live websites directly with desktop, tablet, and mobile device viewport switches.
   - 📱 **Interactive Short-Form Video Lab / Reel Simulator**: Real-time simulated smartphone frame with switchable campaign formats (E-Commerce, Founder Teardown, Web Funnel, Viral Audio) and live engagement counters.
   - ⚡ **Interactive Growth & Pipeline ROI Calculator**: Real-time sliding estimator calculating projected reach, inbound qualified leads, and estimated pipeline revenue.
   - 🗂️ **Dynamic Service Filter Bar**: Instant category filtering across Video, Web, Paid Ads, and Social.
